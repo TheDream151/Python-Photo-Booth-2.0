@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from Camera_Frame import Camera
+# from test import Camera
 from Image_Editor import Image_Editor
 
 
