@@ -28,8 +28,6 @@ class Camera(tk.Frame):
         self.delay = 15
         self.update()
 
-        # self.mainloop()
-
     def snapshot(self):
         # Get a frame from the video source
         ret, frame = self.vid.get_frame()
