@@ -38,36 +38,36 @@ class FilterFrame(Toplevel):
         self.cancel_button.pack(side=RIGHT)
         self.apply_button.pack()
 
-    def negative_button_released(self, event):
+    def negative_button_released(self):
         self.negative()
         self.show_image()
 
-    def black_white_released(self, event):
+    def black_white_released(self):
         self.black_white()
         self.show_image()
 
-    def sepia_button_released(self, event):
+    def sepia_button_released(self):
         self.sepia()
         self.show_image()
 
-    def emboss_button_released(self, event):
+    def emboss_button_released(self):
         self.emboss()
         self.show_image()
 
-    def gaussian_blur_button_released(self, event):
+    def gaussian_blur_button_released(self):
         self.gaussian_blur()
         self.show_image()
 
-    def median_blur_button_released(self, event):
+    def median_blur_button_released(self):
         self.gaussian_blur()
         self.show_image()
 
-    def apply_button_released(self, event):
+    def apply_button_released(self):
         self.master.processed_image = self.filtered_image
         self.show_image()
         self.close()
 
-    def cancel_button_released(self, event):
+    def cancel_button_released(self):
         self.master.image_viewer.show_image()
         self.close()
 

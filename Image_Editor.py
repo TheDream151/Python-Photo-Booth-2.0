@@ -4,9 +4,9 @@ from EditBar import EditBar
 from ImageViewer import ImageViewer
 
 
-class Image_Editor(tk.Frame):
+class ImageEditor(tk.Frame):
 
-    def __init__(self, parent, controller):
+    def __init__(self, parent):
         tk.Frame.__init__(self, parent)
         self.filename = ""
         self.original_image = None
@@ -18,12 +18,10 @@ class Image_Editor(tk.Frame):
         self.filter_frame = None
         self.adjust_frame = None
 
-
-        self.editbar = EditBar(master=self)
+        self.editBar = EditBar(master=self)
         separator1 = ttk.Separator(master=self, orient=tk.HORIZONTAL)
         self.image_viewer = ImageViewer(master=self)
 
-        self.editbar.pack(pady=10)
+        self.editBar.pack(pady=10)
         separator1.pack(fill=tk.X, padx=20, pady=5)
         self.image_viewer.pack(fill=tk.BOTH, padx=20, pady=10, expand=1)
-
