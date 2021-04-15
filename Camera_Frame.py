@@ -17,13 +17,18 @@ class Camera(tk.Frame):
         self.vid = MyVideoCapture()
         self.controller = controller
         self.parent = parent
+
+        self.timer = 10
+        self.countdown = False
         # label of frame Layout 2
 
         self.canvas = tkinter.Canvas(self, width=self.vid.width, height=self.vid.height)
         self.canvas.pack()
 
         self.btn_snapshot = ttk.Button(self, text="Snapshot", width=50, command=self.snapshot)
-        self.btn_timed_snapshot = ttk.Button(self, text="Timed Snapshot", width=50, command=self.timed_snapshot)
+        self.btn_timed_snapshot = ttk.Button(self, text="Timed Snapshot", width=50, command=self.toggle_time)
+        self.filter = ttk.Button(self, text="Toggle Filter", width=50, command=self.vid.toggle_filter)
+        self.filter.pack(anchor=tkinter.CENTER, expand=True)
         self.btn_snapshot.pack(anchor=tkinter.W, expand=True)
         self.btn_timed_snapshot.pack(anchor=tkinter.E, expand=True)
 
@@ -37,22 +42,36 @@ class Camera(tk.Frame):
             cv2.imwrite("photos/frame-" + time.strftime("%d-%m-%Y-%H-%M-%S") + ".jpg",
                         cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
 
-    def timed_snapshot(self):
-
-        now = time.time()
-        future = now + 10
-        while time.time() < future:
-            # self.update()
-            pass
-        ret, frame = self.vid.get_frame()
-        if ret:
-            cv2.imwrite("photos/frame-" + time.strftime("%d-%m-%Y-%H-%M-%S") + ".jpg",
-                        cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
-
+    def toggle_time(self):
+        self.prev = time.time()
+        if self.countdown:
+            self.countdown = False
+        else:
+            self.countdown = True
 
     def update(self):
         # Get a frame from the video source
         ret, frame = self.vid.get_frame()
+
+        if self.countdown:
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            cv2.putText(frame, str(self.timer),
+                        (200, 250), font,
+                        7, (0, 255, 255),
+                        4, cv2.LINE_AA)
+
+            # current time
+            cur = time.time()
+            if cur - self.prev >= 1:
+                self.prev = cur
+                self.timer = self.timer - 1
+
+
+            if self.timer == 0:
+                self.snapshot()
+                self.timer = 10
+                self.countdown = False
+
 
         if ret:
             self.photo = ImageTk.PhotoImage(image=PIL.Image.fromarray(frame))
