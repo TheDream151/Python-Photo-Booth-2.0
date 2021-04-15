@@ -66,12 +66,10 @@ class Camera(tk.Frame):
                 self.prev = cur
                 self.timer = self.timer - 1
 
-
             if self.timer == 0:
                 self.snapshot()
                 self.timer = 10
                 self.countdown = False
-
 
         if ret:
             self.photo = ImageTk.PhotoImage(image=PIL.Image.fromarray(frame))

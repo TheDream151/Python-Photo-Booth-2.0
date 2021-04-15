@@ -14,8 +14,6 @@ class MyVideoCapture:
         self.width = self.vid.get(cv2.CAP_PROP_FRAME_WIDTH)
         self.height = self.vid.get(cv2.CAP_PROP_FRAME_HEIGHT)
 
-
-
         # get facial classifiers
         self.face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
         eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
@@ -44,22 +42,20 @@ class MyVideoCapture:
             if self.filter_bool is True:
                 frame = self.apply_filter(frame)
 
-
             if self.ret:
                 # Return a boolean success flag and the current frame converted to BGR
-                return (self.ret, cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+                return self.ret, cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             else:
-                return (self.ret, None)
+                return self.ret, None
         else:
-            return (self.ret, None)
+            return self.ret, None
 
     # Release the video source when the object is destroyed
     def __del__(self):
         if self.vid.isOpened():
             self.vid.release()
 
-
-    def apply_filter(self,frame):
+    def apply_filter(self, frame):
 
         img_h, img_w = frame.shape[:2]
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
