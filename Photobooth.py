@@ -3,7 +3,13 @@ from tkinter import ttk
 from Camera_Frame import Camera
 # from test import Image_Editor
 from Image_Editor import Image_Editor
+import os
 
+folder = r"/photos/"
+cwd = os.getcwd()
+path = cwd+folder
+if not os.path.exists(path):
+    os.makedirs(path)
 
 class tkinterApp(tk.Tk):
 

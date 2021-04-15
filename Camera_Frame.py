@@ -23,7 +23,9 @@ class Camera(tk.Frame):
         self.canvas.pack()
 
         self.btn_snapshot = ttk.Button(self, text="Snapshot", width=50, command=self.snapshot)
-        self.btn_snapshot.pack(anchor=tkinter.CENTER, expand=True)
+        self.btn_timed_snapshot = ttk.Button(self, text="Timed Snapshot", width=50, command=self.timed_snapshot)
+        self.btn_snapshot.pack(anchor=tkinter.W, expand=True)
+        self.btn_timed_snapshot.pack(anchor=tkinter.E, expand=True)
 
         self.delay = 15
         self.update()
@@ -32,8 +34,21 @@ class Camera(tk.Frame):
         # Get a frame from the video source
         ret, frame = self.vid.get_frame()
         if ret:
-            cv2.imwrite("frame-" + time.strftime("%d-%m-%Y-%H-%M-%S") + ".jpg",
+            cv2.imwrite("photos/frame-" + time.strftime("%d-%m-%Y-%H-%M-%S") + ".jpg",
                         cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
+
+    def timed_snapshot(self):
+
+        now = time.time()
+        future = now + 10
+        while time.time() < future:
+            # self.update()
+            pass
+        ret, frame = self.vid.get_frame()
+        if ret:
+            cv2.imwrite("photos/frame-" + time.strftime("%d-%m-%Y-%H-%M-%S") + ".jpg",
+                        cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
+
 
     def update(self):
         # Get a frame from the video source
