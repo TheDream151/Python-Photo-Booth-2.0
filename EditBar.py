@@ -143,4 +143,3 @@ class EditBar(Frame):
     def choose_color(self):
         # variable to store hexadecimal code of color
         self.master.image_viewer.set_color_code(colorchooser.askcolor(title="Choose color"))
-        # print(self.master.image_viewer.color_code[1])

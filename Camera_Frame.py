@@ -25,12 +25,12 @@ class Camera(tk.Frame):
         self.canvas = tkinter.Canvas(self, width=self.vid.width, height=self.vid.height)
         self.canvas.pack()
 
-        self.btn_snapshot = ttk.Button(self, text="Snapshot", width=50, command=self.snapshot)
-        self.btn_timed_snapshot = ttk.Button(self, text="Timed Snapshot", width=50, command=self.toggle_time)
-        self.filter = ttk.Button(self, text="Toggle Filter", width=50, command=self.vid.toggle_filter)
-        self.filter.pack(anchor=tkinter.CENTER, expand=True)
-        self.btn_snapshot.pack(anchor=tkinter.W, expand=True)
-        self.btn_timed_snapshot.pack(anchor=tkinter.E, expand=True)
+        self.btn_snapshot = ttk.Button(self, text="Snapshot", width=25, command=self.snapshot)
+        self.filter = ttk.Button(self, text="Toggle Filter",width=25, command=self.vid.toggle_filter)
+        self.btn_timed_snapshot = ttk.Button(self, text="Timed Snapshot",width=25, command=self.toggle_time)
+        self.btn_snapshot.pack(side=tkinter.LEFT, expand=True)
+        self.filter.pack(side=tkinter.LEFT, expand=True)
+        self.btn_timed_snapshot.pack(side=tkinter.LEFT, expand=True)
 
         self.delay = 15
         self.update()

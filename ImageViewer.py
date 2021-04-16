@@ -87,7 +87,6 @@ class ImageViewer(Frame):
         self.y = event.y
 
     def draw(self, event):
-        print(self.colorcode)
         self.draw_ids.append(self.canvas.create_line(self.x, self.y, event.x, event.y, width=2,
                                                      fill=self.colorcode[1], capstyle=ROUND, smooth=True))
 
