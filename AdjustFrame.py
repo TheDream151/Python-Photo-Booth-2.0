@@ -47,11 +47,11 @@ class AdjustFrame(Toplevel):
         self.preview_button.pack(side=RIGHT)
         self.apply_button.pack()
 
-    def apply_button_released(self):
+    def apply_button_released(self, event):
         self.master.processed_image = self.processing_image
         self.close()
 
-    def show_button_release(self):
+    def show_button_release(self, event):
         self.processing_image = cv2.convertScaleAbs(self.original_image, alpha=self.brightness_scale.get())
         b, g, r = cv2.split(self.processing_image)
 
@@ -65,7 +65,7 @@ class AdjustFrame(Toplevel):
         self.processing_image = cv2.merge((b, g, r))
         self.show_image(self.processing_image)
 
-    def cancel_button_released(self):
+    def cancel_button_released(self, event):
         self.close()
 
     def show_image(self, img=None):

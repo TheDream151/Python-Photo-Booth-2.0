@@ -2,6 +2,7 @@ from tkinter import Frame, Button, LEFT
 from tkinter import filedialog
 from FilterFrame import FilterFrame
 from AdjustFrame import AdjustFrame
+from tkinter import colorchooser
 
 import cv2
 
@@ -19,6 +20,7 @@ class EditBar(Frame):
         self.filter_button = Button(self, text="Filter")
         self.adjust_button = Button(self, text="Adjust")
         self.clear_button = Button(self, text="Clear")
+        self.color_button = Button(self, text="Select color",command=self.choose_color)
 
         self.new_button.bind("<ButtonRelease>", self.new_button_released)
         self.save_button.bind("<ButtonRelease>", self.save_button_released)
@@ -33,6 +35,7 @@ class EditBar(Frame):
         self.save_button.pack(side=LEFT)
         self.save_as_button.pack(side=LEFT)
         self.draw_button.pack(side=LEFT)
+        self.color_button.pack(side=LEFT)
         self.crop_button.pack(side=LEFT)
         self.filter_button.pack(side=LEFT)
         self.adjust_button.pack(side=LEFT)
@@ -136,3 +139,8 @@ class EditBar(Frame):
 
                 self.master.processed_image = self.master.original_image.copy()
                 self.master.image_viewer.show_image()
+
+    def choose_color(self):
+        # variable to store hexadecimal code of color
+        self.master.image_viewer.set_color_code(colorchooser.askcolor(title="Choose color"))
+        # print(self.master.image_viewer.color_code[1])

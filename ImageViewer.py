@@ -18,6 +18,7 @@ class ImageViewer(Frame):
         self.draw_ids = list()
         self.rectangle_id = 0
         self.ratio = 0
+        self.colorcode = ((0,0,255),'red')
 
         self.canvas = Canvas(self, bg="gray", width=600, height=400)
         self.canvas.place(relx=0.5, rely=0.5, anchor=CENTER)
@@ -53,6 +54,8 @@ class ImageViewer(Frame):
         self.canvas.config(width=new_width, height=new_height)
         self.canvas.create_image(new_width / 2, new_height / 2, anchor=CENTER, image=self.shown_image)
 
+    def set_color_code(self,colorcode):
+        self.colorcode = colorcode
     def activate_draw(self):
         self.canvas.bind("<ButtonPress>", self.start_draw)
         self.canvas.bind("<B1-Motion>", self.draw)
@@ -84,12 +87,13 @@ class ImageViewer(Frame):
         self.y = event.y
 
     def draw(self, event):
+        print(self.colorcode)
         self.draw_ids.append(self.canvas.create_line(self.x, self.y, event.x, event.y, width=2,
-                                                     fill="red", capstyle=ROUND, smooth=True))
+                                                     fill=self.colorcode[1], capstyle=ROUND, smooth=True))
 
         cv2.line(self.master.processed_image, (int(self.x * self.ratio), int(self.y * self.ratio)),
                  (int(event.x * self.ratio), int(event.y * self.ratio)),
-                 (0, 0, 255), thickness=int(self.ratio * 2),
+                 self.colorcode[0], thickness=int(self.ratio * 2),
                  lineType=8)
 
         self.x = event.x
@@ -109,7 +113,7 @@ class ImageViewer(Frame):
         self.rectangle_id = self.canvas.create_rectangle(self.crop_start_x, self.crop_start_y,
                                                          self.crop_end_x, self.crop_end_y, width=1)
 
-    def end_crop(self):
+    def end_crop(self, event):
         if self.crop_start_x <= self.crop_end_x and self.crop_start_y <= self.crop_end_y:
             start_x = int(self.crop_start_x * self.ratio)
             start_y = int(self.crop_start_y * self.ratio)
