@@ -20,7 +20,7 @@ class EditBar(Frame):
         self.filter_button = Button(self, text="Filter")
         self.adjust_button = Button(self, text="Adjust")
         self.clear_button = Button(self, text="Clear")
-        self.color_button = Button(self, text="Select color",command=self.choose_color)
+        self.color_button = Button(self, text="Select Color",command=self.choose_color)
 
         self.new_button.bind("<ButtonRelease>", self.new_button_released)
         self.save_button.bind("<ButtonRelease>", self.save_button_released)
