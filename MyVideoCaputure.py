@@ -48,12 +48,10 @@ class MyVideoCapture:
             self.ret, frame = self.vid.read()
 
             if self.filter_bool is True:
-<<<<<<< HEAD
+
                 # self.apply_hat_filter(frame)
                 self.apply_filter(frame)
-=======
-                frame = self.apply_filter(frame)
->>>>>>> 583c9afbcecc2cbb66d5790aa9db1d191ce51edd
+
 
             if self.ret:
                 # Return a boolean success flag and the current frame converted to BGR
@@ -126,8 +124,6 @@ class MyVideoCapture:
 
             # put back in original image
             frame[filter_y1:filter_y2, filter_x1:filter_x2] = dst
-
-
 
 
             # witch size in relation to face by scaling

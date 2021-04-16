@@ -6,7 +6,7 @@ from ImageViewer import ImageViewer
 
 class ImageEditor(tk.Frame):
 
-    def __init__(self, parent):
+    def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         self.filename = ""
         self.original_image = None
