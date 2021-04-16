@@ -48,16 +48,20 @@ class MyVideoCapture:
             self.ret, frame = self.vid.read()
 
             if self.filter_bool is True:
+<<<<<<< HEAD
                 # self.apply_hat_filter(frame)
                 self.apply_filter(frame)
+=======
+                frame = self.apply_filter(frame)
+>>>>>>> 583c9afbcecc2cbb66d5790aa9db1d191ce51edd
 
             if self.ret:
                 # Return a boolean success flag and the current frame converted to BGR
-                return (self.ret, cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+                return self.ret, cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             else:
-                return (self.ret, None)
+                return self.ret, None
         else:
-            return (self.ret, None)
+            return self.ret, None
 
     # Release the video source when the object is destroyed
     def __del__(self):

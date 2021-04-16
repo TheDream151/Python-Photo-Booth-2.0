@@ -109,7 +109,7 @@ class ImageViewer(Frame):
         self.rectangle_id = self.canvas.create_rectangle(self.crop_start_x, self.crop_start_y,
                                                          self.crop_end_x, self.crop_end_y, width=1)
 
-    def end_crop(self, event):
+    def end_crop(self):
         if self.crop_start_x <= self.crop_end_x and self.crop_start_y <= self.crop_end_y:
             start_x = int(self.crop_start_x * self.ratio)
             start_y = int(self.crop_start_y * self.ratio)

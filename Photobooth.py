@@ -1,8 +1,7 @@
 import tkinter as tk
-from tkinter import ttk
 from Camera_Frame import Camera
 # from test import Image_Editor
-from Image_Editor import Image_Editor
+from Image_Editor import ImageEditor
 import os
 
 folder = r"/photos/"
@@ -11,7 +10,8 @@ path = cwd+folder
 if not os.path.exists(path):
     os.makedirs(path)
 
-class tkinterApp(tk.Tk):
+
+class TkinterApp(tk.Tk):
 
     # __init__ function for class tkinterApp
     def __init__(self, *args, **kwargs):
@@ -30,30 +30,29 @@ class tkinterApp(tk.Tk):
 
         # iterating through a tuple consisting
         # of the different page layouts
-        for F in (Camera, Image_Editor):
+        for F in (Camera, ImageEditor):
             frame = F(container, self)
 
             # initializing frame of that object from
-            # startpage, page1, page2 respectively with
+            # startPage, page1, page2 respectively with
             # for loop
             self.frames[F] = frame
 
             frame.grid(row=0, column=0, sticky="nsew")
 
         self.show_frame(Camera)
-        menubar = tk.Menu(self)
-        filemenu = tk.Menu(menubar, tearoff=0)
-        filemenu.add_command(label="Camera", command=lambda: self.show_frame(Camera))
-        filemenu.add_command(label="Image Editor", command=lambda: self.show_frame(Image_Editor))
-        filemenu.add_separator()
-        filemenu.add_command(label="Exit", command=self.quit)
-        menubar.add_cascade(label="File", menu=filemenu)
+        menu_bar = tk.Menu(self)
+        file_menu = tk.Menu(menu_bar, tearoff=0)
+        file_menu.add_command(label="Camera", command=lambda: self.show_frame(Camera))
+        file_menu.add_command(label="Image Editor", command=lambda: self.show_frame(ImageEditor))
+        file_menu.add_separator()
+        file_menu.add_command(label="Exit", command=self.quit)
+        menu_bar.add_cascade(label="File", menu=file_menu)
 
-        self.config(menu=menubar)
+        self.config(menu=menu_bar)
 
     # to display the current frame passed as
     # parameter
     def show_frame(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
-
