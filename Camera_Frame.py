@@ -45,6 +45,7 @@ class Camera(tk.Frame):
     def toggle_time(self):
         self.prev = time.time()
         if self.countdown:
+            self.timer=10
             self.countdown = False
         else:
             self.countdown = True
