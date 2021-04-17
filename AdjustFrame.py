@@ -48,6 +48,7 @@ class AdjustFrame(Toplevel):
         self.apply_button.pack()
 
     def apply_button_released(self, event):
+        self.show_button_release(None)
         self.master.processed_image = self.processing_image
         self.close()
 
