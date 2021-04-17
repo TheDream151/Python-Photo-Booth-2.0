@@ -12,7 +12,7 @@ from MyVideoCaputure import MyVideoCapture
 
 class Camera(tk.Frame):
     def __init__(self, parent, controller, video_source=0):
-        self.video_source = 0
+        self.video_source = video_source
         tk.Frame.__init__(self, parent)
         self.vid = MyVideoCapture()
         self.controller = controller
@@ -26,8 +26,8 @@ class Camera(tk.Frame):
         self.canvas.pack()
 
         self.btn_snapshot = ttk.Button(self, text="Snapshot", width=25, command=self.snapshot)
-        self.filter = ttk.Button(self, text="Toggle Filter",width=25, command=self.vid.toggle_filter)
-        self.btn_timed_snapshot = ttk.Button(self, text="Timed Snapshot",width=25, command=self.toggle_time)
+        self.filter = ttk.Button(self, text="Toggle Filter", width=25, command=self.vid.toggle_filter)
+        self.btn_timed_snapshot = ttk.Button(self, text="Timed Snapshot", width=25, command=self.toggle_time)
         self.btn_snapshot.pack(side=tkinter.LEFT, expand=True)
         self.filter.pack(side=tkinter.LEFT, expand=True)
         self.btn_timed_snapshot.pack(side=tkinter.LEFT, expand=True)
@@ -45,7 +45,7 @@ class Camera(tk.Frame):
     def toggle_time(self):
         self.prev = time.time()
         if self.countdown:
-            self.timer=10
+            self.timer = 10
             self.countdown = False
         else:
             self.countdown = True

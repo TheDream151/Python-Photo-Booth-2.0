@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 
 
 class MyVideoCapture:
@@ -16,7 +15,6 @@ class MyVideoCapture:
 
         # get facial classifiers
         self.face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-        eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
         self.filter_bool = False
         # read images
         self.beard = cv2.imread('beard.png')
@@ -44,22 +42,22 @@ class MyVideoCapture:
             self.filter_bool = True
 
     def get_frame(self):
+
+        ret = False
         if self.vid.isOpened():
-            self.ret, frame = self.vid.read()
+            ret, frame = self.vid.read()
 
             if self.filter_bool is True:
-
                 # self.apply_hat_filter(frame)
                 self.apply_filter(frame)
 
-
-            if self.ret:
+            if ret:
                 # Return a boolean success flag and the current frame converted to BGR
-                return self.ret, cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                return ret, cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             else:
-                return self.ret, None
+                return ret, None
         else:
-            return self.ret, None
+            return ret, None
 
     # Release the video source when the object is destroyed
     def __del__(self):
@@ -83,7 +81,6 @@ class MyVideoCapture:
             face_x1 = x
             face_x2 = face_x1 + face_w
             face_y1 = y
-            face_y2 = face_y1 + face_h
 
             # witch size in relation to face by scaling
             filter_width = int(face_w)
@@ -125,7 +122,6 @@ class MyVideoCapture:
             # put back in original image
             frame[filter_y1:filter_y2, filter_x1:filter_x2] = dst
 
-
             # witch size in relation to face by scaling
             filter_width = int(1.4 * face_w)
             filter_height = int(filter_width * self.original_hat_h / self.original_hat_w)
@@ -134,7 +130,7 @@ class MyVideoCapture:
             filter_x1 = face_x2 - int(face_w / 2) - int(filter_width / 2)
             filter_x2 = filter_x1 + filter_width
             filter_y1 = face_y1 - int(face_h * 1.25)
-            filter_y2 = filter_y1 + int(filter_height*1.25)
+            filter_y2 = filter_y1 + int(filter_height * 1.25)
 
             # check to see if out of frame
             if filter_x1 < 0:
@@ -158,6 +154,7 @@ class MyVideoCapture:
 
             # take ROI for witch from background that is equal to size of witch image
             roi = frame[filter_y1:filter_y2, filter_x1:filter_x2]
+
             # original image in background (bg) where witch is not
             roi_bg = cv2.bitwise_and(roi, roi, mask=mask)
             roi_fg = cv2.bitwise_and(self.hat, self.hat, mask=mask_inv)
