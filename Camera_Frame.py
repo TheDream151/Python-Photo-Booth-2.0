@@ -7,7 +7,7 @@ import PIL
 import cv2
 from PIL import ImageTk
 
-from MyVideoCaputure import MyVideoCapture
+from MyVideoCapture import MyVideoCapture
 
 
 class Camera(tk.Frame):
@@ -52,7 +52,7 @@ class Camera(tk.Frame):
 
     def update(self):
         # Get a frame from the video source
-        ret, frame = self.vid.get_frame()
+        ret, frame = self.vid.get_fram
 
         if self.countdown:
             font = cv2.FONT_HERSHEY_SIMPLEX
