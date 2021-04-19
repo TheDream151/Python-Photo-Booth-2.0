@@ -7,7 +7,7 @@ import PIL
 import cv2
 from PIL import ImageTk
 
-from MyVideoCaputure import MyVideoCapture
+from MyVideoCapture import MyVideoCapture
 
 
 class Camera(tk.Frame):

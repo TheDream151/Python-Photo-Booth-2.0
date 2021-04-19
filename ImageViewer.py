@@ -54,8 +54,8 @@ class ImageViewer(Frame):
         self.canvas.config(width=new_width, height=new_height)
         self.canvas.create_image(new_width / 2, new_height / 2, anchor=CENTER, image=self.shown_image)
 
-    def set_color_code(self, colorCode):
-        self.colorCode = colorCode
+    def set_color_code(self, colorcode):
+        self.colorCode = colorcode
 
     def activate_draw(self):
         self.canvas.bind("<ButtonPress>", self.start_draw)
