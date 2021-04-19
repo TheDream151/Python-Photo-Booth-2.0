@@ -17,7 +17,7 @@ class Camera(tk.Frame):
         self.vid = MyVideoCapture()
         self.controller = controller
         self.parent = parent
-
+        self.prev = time.time()
         self.timer = 10
         self.countdown = False
         # label of frame Layout 2
