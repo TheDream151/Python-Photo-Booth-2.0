@@ -52,7 +52,7 @@ class Camera(tk.Frame):
 
     def update(self):
         # Get a frame from the video source
-        ret, frame = self.vid.get_fram
+        ret, frame = self.vid.get_frame()
 
         if self.countdown:
             font = cv2.FONT_HERSHEY_SIMPLEX
