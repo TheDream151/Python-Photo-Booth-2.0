@@ -1,4 +1,4 @@
-from Photobooth import TkinterApp
+from Photobooth import PhotoBooth
 
-app = TkinterApp()
+app = PhotoBooth()
 app.mainloop()

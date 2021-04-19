@@ -11,7 +11,7 @@ if not os.path.exists(path):
     os.makedirs(path)
 
 
-class TkinterApp(tk.Tk):
+class PhotoBooth(tk.Tk):
 
     # __init__ function for class tkinterApp
     def __init__(self, *args, **kwargs):
