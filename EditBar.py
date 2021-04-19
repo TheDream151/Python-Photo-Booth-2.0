@@ -12,7 +12,7 @@ class EditBar(Frame):
     def __init__(self, master=None):
         Frame.__init__(self, master=master)
 
-        self.new_button = Button(self, text="New")
+        self.new_button = Button(self, text="Open")
         self.save_button = Button(self, text="Save")
         self.save_as_button = Button(self, text="Save As")
         self.draw_button = Button(self, text="Draw")
