@@ -28,13 +28,10 @@
                     <h2>API Documentation</h2>
                         <ul class="memberlist">
             <li>
-                    <a class="class" href="#TkinterApp">TkinterApp</a>
+                    <a class="class" href="#PhotoBooth">PhotoBooth</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="function" href="#TkinterApp.__init__">TkinterApp</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#TkinterApp.show_frame">show_frame</a>
+                                <a class="function" href="#PhotoBooth.__init__">PhotoBooth</a>
                         </li>
                 </ul>
 
@@ -70,7 +67,7 @@
     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 
 
-<span class="k">class</span> <span class="nc">TkinterApp</span><span class="p">(</span><span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">PhotoBooth</span><span class="p">(</span><span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">):</span>
 
     <span class="c1"># __init__ function for class tkinterApp</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -99,11 +96,11 @@
 
             <span class="n">frame</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&quot;nsew&quot;</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_frame</span><span class="p">(</span><span class="n">Camera</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_frame</span><span class="p">(</span><span class="n">Camera</span><span class="p">)</span>
         <span class="n">menu_bar</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Menu</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">file_menu</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Menu</span><span class="p">(</span><span class="n">menu_bar</span><span class="p">,</span> <span class="n">tearoff</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-        <span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Camera&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_frame</span><span class="p">(</span><span class="n">Camera</span><span class="p">))</span>
-        <span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Image Editor&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_frame</span><span class="p">(</span><span class="n">ImageEditor</span><span class="p">))</span>
+        <span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Camera&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">__show_frame</span><span class="p">(</span><span class="n">Camera</span><span class="p">))</span>
+        <span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Image Editor&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">__show_frame</span><span class="p">(</span><span class="n">ImageEditor</span><span class="p">))</span>
         <span class="n">file_menu</span><span class="o">.</span><span class="n">add_separator</span><span class="p">()</span>
         <span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Exit&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">quit</span><span class="p">)</span>
         <span class="n">menu_bar</span><span class="o">.</span><span class="n">add_cascade</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;File&quot;</span><span class="p">,</span> <span class="n">menu</span><span class="o">=</span><span class="n">file_menu</span><span class="p">)</span>
@@ -112,7 +109,11 @@
 
     <span class="c1"># to display the current frame passed as</span>
     <span class="c1"># parameter</span>
-    <span class="k">def</span> <span class="nf">show_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cont</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__show_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cont</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Displays the frame that is passed into the function</span>
+<span class="sd">        @:param cont is the frame to be displayed in the window</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">frame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="n">cont</span><span class="p">]</span>
         <span class="n">frame</span><span class="o">.</span><span class="n">tkraise</span><span class="p">()</span>
 </pre></div>
@@ -120,18 +121,18 @@
         </details>
 
             </section>
-                <section id="TkinterApp">
+                <section id="PhotoBooth">
                                 <div class="attr class">
-        <a class="headerlink" href="#TkinterApp">#&nbsp;&nbsp</a>
+        <a class="headerlink" href="#PhotoBooth">#&nbsp;&nbsp</a>
 
         
         <span class="def">class</span>
-        <span class="name">TkinterApp</span>(<span class="base">tkinter.Tk</span>):
+        <span class="name">PhotoBooth</span>(<span class="base">tkinter.Tk</span>):
     </div>
 
                 <details>
             <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">TkinterApp</span><span class="p">(</span><span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">):</span>
+            <div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">PhotoBooth</span><span class="p">(</span><span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">):</span>
 
     <span class="c1"># __init__ function for class tkinterApp</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -160,11 +161,11 @@
 
             <span class="n">frame</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&quot;nsew&quot;</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_frame</span><span class="p">(</span><span class="n">Camera</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_frame</span><span class="p">(</span><span class="n">Camera</span><span class="p">)</span>
         <span class="n">menu_bar</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Menu</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">file_menu</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Menu</span><span class="p">(</span><span class="n">menu_bar</span><span class="p">,</span> <span class="n">tearoff</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-        <span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Camera&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_frame</span><span class="p">(</span><span class="n">Camera</span><span class="p">))</span>
-        <span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Image Editor&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_frame</span><span class="p">(</span><span class="n">ImageEditor</span><span class="p">))</span>
+        <span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Camera&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">__show_frame</span><span class="p">(</span><span class="n">Camera</span><span class="p">))</span>
+        <span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Image Editor&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">__show_frame</span><span class="p">(</span><span class="n">ImageEditor</span><span class="p">))</span>
         <span class="n">file_menu</span><span class="o">.</span><span class="n">add_separator</span><span class="p">()</span>
         <span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Exit&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">quit</span><span class="p">)</span>
         <span class="n">menu_bar</span><span class="o">.</span><span class="n">add_cascade</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;File&quot;</span><span class="p">,</span> <span class="n">menu</span><span class="o">=</span><span class="n">file_menu</span><span class="p">)</span>
@@ -173,7 +174,11 @@
 
     <span class="c1"># to display the current frame passed as</span>
     <span class="c1"># parameter</span>
-    <span class="k">def</span> <span class="nf">show_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cont</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__show_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cont</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Displays the frame that is passed into the function</span>
+<span class="sd">        @:param cont is the frame to be displayed in the window</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">frame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="n">cont</span><span class="p">]</span>
         <span class="n">frame</span><span class="o">.</span><span class="n">tkraise</span><span class="p">()</span>
 </pre></div>
@@ -185,11 +190,11 @@ of an application. It has an associated Tcl interpreter.</p>
 </div>
 
 
-                            <div id="TkinterApp.__init__" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#TkinterApp.__init__">#&nbsp;&nbsp</a>
+                            <div id="PhotoBooth.__init__" class="classattr">
+                                        <div class="attr function"><a class="headerlink" href="#PhotoBooth.__init__">#&nbsp;&nbsp</a>
 
         
-            <span class="name">TkinterApp</span><span class="signature">(*args, **kwargs)</span>
+            <span class="name">PhotoBooth</span><span class="signature">(*args, **kwargs)</span>
     </div>
 
                 <details>
@@ -220,11 +225,11 @@ of an application. It has an associated Tcl interpreter.</p>
 
             <span class="n">frame</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&quot;nsew&quot;</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_frame</span><span class="p">(</span><span class="n">Camera</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_frame</span><span class="p">(</span><span class="n">Camera</span><span class="p">)</span>
         <span class="n">menu_bar</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Menu</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">file_menu</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Menu</span><span class="p">(</span><span class="n">menu_bar</span><span class="p">,</span> <span class="n">tearoff</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-        <span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Camera&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_frame</span><span class="p">(</span><span class="n">Camera</span><span class="p">))</span>
-        <span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Image Editor&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_frame</span><span class="p">(</span><span class="n">ImageEditor</span><span class="p">))</span>
+        <span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Camera&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">__show_frame</span><span class="p">(</span><span class="n">Camera</span><span class="p">))</span>
+        <span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Image Editor&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">__show_frame</span><span class="p">(</span><span class="n">ImageEditor</span><span class="p">))</span>
         <span class="n">file_menu</span><span class="o">.</span><span class="n">add_separator</span><span class="p">()</span>
         <span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Exit&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">quit</span><span class="p">)</span>
         <span class="n">menu_bar</span><span class="o">.</span><span class="n">add_cascade</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;File&quot;</span><span class="p">,</span> <span class="n">menu</span><span class="o">=</span><span class="n">file_menu</span><span class="p">)</span>
@@ -243,239 +248,219 @@ is the name of the widget class.</p>
 
 
                             </div>
-                            <div id="TkinterApp.show_frame" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#TkinterApp.show_frame">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">show_frame</span><span class="signature">(self, cont)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">show_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cont</span><span class="p">):</span>
-        <span class="n">frame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="n">cont</span><span class="p">]</span>
-        <span class="n">frame</span><span class="o">.</span><span class="n">tkraise</span><span class="p">()</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
                             <div class="inherited">
                                 <h5>Inherited Members</h5>
                                 <dl>
                                     <div><dt>tkinter.Tk</dt>
-                                <dd id="TkinterApp.loadtk" class="function">loadtk</dd>
-                <dd id="TkinterApp.destroy" class="function">destroy</dd>
-                <dd id="TkinterApp.readprofile" class="function">readprofile</dd>
-                <dd id="TkinterApp.report_callback_exception" class="function">report_callback_exception</dd>
+                                <dd id="PhotoBooth.loadtk" class="function">loadtk</dd>
+                <dd id="PhotoBooth.destroy" class="function">destroy</dd>
+                <dd id="PhotoBooth.readprofile" class="function">readprofile</dd>
+                <dd id="PhotoBooth.report_callback_exception" class="function">report_callback_exception</dd>
 
             </div>
             <div><dt>tkinter.Misc</dt>
-                                <dd id="TkinterApp.deletecommand" class="function">deletecommand</dd>
-                <dd id="TkinterApp.tk_strictMotif" class="function">tk_strictMotif</dd>
-                <dd id="TkinterApp.tk_bisque" class="function">tk_bisque</dd>
-                <dd id="TkinterApp.tk_setPalette" class="function">tk_setPalette</dd>
-                <dd id="TkinterApp.wait_variable" class="function">wait_variable</dd>
-                <dd id="TkinterApp.waitvar" class="function">waitvar</dd>
-                <dd id="TkinterApp.wait_window" class="function">wait_window</dd>
-                <dd id="TkinterApp.wait_visibility" class="function">wait_visibility</dd>
-                <dd id="TkinterApp.setvar" class="function">setvar</dd>
-                <dd id="TkinterApp.getvar" class="function">getvar</dd>
-                <dd id="TkinterApp.getint" class="function">getint</dd>
-                <dd id="TkinterApp.getdouble" class="function">getdouble</dd>
-                <dd id="TkinterApp.getboolean" class="function">getboolean</dd>
-                <dd id="TkinterApp.focus_set" class="function">focus_set</dd>
-                <dd id="TkinterApp.focus" class="function">focus</dd>
-                <dd id="TkinterApp.focus_force" class="function">focus_force</dd>
-                <dd id="TkinterApp.focus_get" class="function">focus_get</dd>
-                <dd id="TkinterApp.focus_displayof" class="function">focus_displayof</dd>
-                <dd id="TkinterApp.focus_lastfor" class="function">focus_lastfor</dd>
-                <dd id="TkinterApp.tk_focusFollowsMouse" class="function">tk_focusFollowsMouse</dd>
-                <dd id="TkinterApp.tk_focusNext" class="function">tk_focusNext</dd>
-                <dd id="TkinterApp.tk_focusPrev" class="function">tk_focusPrev</dd>
-                <dd id="TkinterApp.after" class="function">after</dd>
-                <dd id="TkinterApp.after_idle" class="function">after_idle</dd>
-                <dd id="TkinterApp.after_cancel" class="function">after_cancel</dd>
-                <dd id="TkinterApp.bell" class="function">bell</dd>
-                <dd id="TkinterApp.clipboard_get" class="function">clipboard_get</dd>
-                <dd id="TkinterApp.clipboard_clear" class="function">clipboard_clear</dd>
-                <dd id="TkinterApp.clipboard_append" class="function">clipboard_append</dd>
-                <dd id="TkinterApp.grab_current" class="function">grab_current</dd>
-                <dd id="TkinterApp.grab_release" class="function">grab_release</dd>
-                <dd id="TkinterApp.grab_set" class="function">grab_set</dd>
-                <dd id="TkinterApp.grab_set_global" class="function">grab_set_global</dd>
-                <dd id="TkinterApp.grab_status" class="function">grab_status</dd>
-                <dd id="TkinterApp.option_add" class="function">option_add</dd>
-                <dd id="TkinterApp.option_clear" class="function">option_clear</dd>
-                <dd id="TkinterApp.option_get" class="function">option_get</dd>
-                <dd id="TkinterApp.option_readfile" class="function">option_readfile</dd>
-                <dd id="TkinterApp.selection_clear" class="function">selection_clear</dd>
-                <dd id="TkinterApp.selection_get" class="function">selection_get</dd>
-                <dd id="TkinterApp.selection_handle" class="function">selection_handle</dd>
-                <dd id="TkinterApp.selection_own" class="function">selection_own</dd>
-                <dd id="TkinterApp.selection_own_get" class="function">selection_own_get</dd>
-                <dd id="TkinterApp.send" class="function">send</dd>
-                <dd id="TkinterApp.lower" class="function">lower</dd>
-                <dd id="TkinterApp.tkraise" class="function">tkraise</dd>
-                <dd id="TkinterApp.lift" class="function">lift</dd>
-                <dd id="TkinterApp.winfo_atom" class="function">winfo_atom</dd>
-                <dd id="TkinterApp.winfo_atomname" class="function">winfo_atomname</dd>
-                <dd id="TkinterApp.winfo_cells" class="function">winfo_cells</dd>
-                <dd id="TkinterApp.winfo_children" class="function">winfo_children</dd>
-                <dd id="TkinterApp.winfo_class" class="function">winfo_class</dd>
-                <dd id="TkinterApp.winfo_colormapfull" class="function">winfo_colormapfull</dd>
-                <dd id="TkinterApp.winfo_containing" class="function">winfo_containing</dd>
-                <dd id="TkinterApp.winfo_depth" class="function">winfo_depth</dd>
-                <dd id="TkinterApp.winfo_exists" class="function">winfo_exists</dd>
-                <dd id="TkinterApp.winfo_fpixels" class="function">winfo_fpixels</dd>
-                <dd id="TkinterApp.winfo_geometry" class="function">winfo_geometry</dd>
-                <dd id="TkinterApp.winfo_height" class="function">winfo_height</dd>
-                <dd id="TkinterApp.winfo_id" class="function">winfo_id</dd>
-                <dd id="TkinterApp.winfo_interps" class="function">winfo_interps</dd>
-                <dd id="TkinterApp.winfo_ismapped" class="function">winfo_ismapped</dd>
-                <dd id="TkinterApp.winfo_manager" class="function">winfo_manager</dd>
-                <dd id="TkinterApp.winfo_name" class="function">winfo_name</dd>
-                <dd id="TkinterApp.winfo_parent" class="function">winfo_parent</dd>
-                <dd id="TkinterApp.winfo_pathname" class="function">winfo_pathname</dd>
-                <dd id="TkinterApp.winfo_pixels" class="function">winfo_pixels</dd>
-                <dd id="TkinterApp.winfo_pointerx" class="function">winfo_pointerx</dd>
-                <dd id="TkinterApp.winfo_pointerxy" class="function">winfo_pointerxy</dd>
-                <dd id="TkinterApp.winfo_pointery" class="function">winfo_pointery</dd>
-                <dd id="TkinterApp.winfo_reqheight" class="function">winfo_reqheight</dd>
-                <dd id="TkinterApp.winfo_reqwidth" class="function">winfo_reqwidth</dd>
-                <dd id="TkinterApp.winfo_rgb" class="function">winfo_rgb</dd>
-                <dd id="TkinterApp.winfo_rootx" class="function">winfo_rootx</dd>
-                <dd id="TkinterApp.winfo_rooty" class="function">winfo_rooty</dd>
-                <dd id="TkinterApp.winfo_screen" class="function">winfo_screen</dd>
-                <dd id="TkinterApp.winfo_screencells" class="function">winfo_screencells</dd>
-                <dd id="TkinterApp.winfo_screendepth" class="function">winfo_screendepth</dd>
-                <dd id="TkinterApp.winfo_screenheight" class="function">winfo_screenheight</dd>
-                <dd id="TkinterApp.winfo_screenmmheight" class="function">winfo_screenmmheight</dd>
-                <dd id="TkinterApp.winfo_screenmmwidth" class="function">winfo_screenmmwidth</dd>
-                <dd id="TkinterApp.winfo_screenvisual" class="function">winfo_screenvisual</dd>
-                <dd id="TkinterApp.winfo_screenwidth" class="function">winfo_screenwidth</dd>
-                <dd id="TkinterApp.winfo_server" class="function">winfo_server</dd>
-                <dd id="TkinterApp.winfo_toplevel" class="function">winfo_toplevel</dd>
-                <dd id="TkinterApp.winfo_viewable" class="function">winfo_viewable</dd>
-                <dd id="TkinterApp.winfo_visual" class="function">winfo_visual</dd>
-                <dd id="TkinterApp.winfo_visualid" class="function">winfo_visualid</dd>
-                <dd id="TkinterApp.winfo_visualsavailable" class="function">winfo_visualsavailable</dd>
-                <dd id="TkinterApp.winfo_vrootheight" class="function">winfo_vrootheight</dd>
-                <dd id="TkinterApp.winfo_vrootwidth" class="function">winfo_vrootwidth</dd>
-                <dd id="TkinterApp.winfo_vrootx" class="function">winfo_vrootx</dd>
-                <dd id="TkinterApp.winfo_vrooty" class="function">winfo_vrooty</dd>
-                <dd id="TkinterApp.winfo_width" class="function">winfo_width</dd>
-                <dd id="TkinterApp.winfo_x" class="function">winfo_x</dd>
-                <dd id="TkinterApp.winfo_y" class="function">winfo_y</dd>
-                <dd id="TkinterApp.update" class="function">update</dd>
-                <dd id="TkinterApp.update_idletasks" class="function">update_idletasks</dd>
-                <dd id="TkinterApp.bindtags" class="function">bindtags</dd>
-                <dd id="TkinterApp.bind" class="function">bind</dd>
-                <dd id="TkinterApp.unbind" class="function">unbind</dd>
-                <dd id="TkinterApp.bind_all" class="function">bind_all</dd>
-                <dd id="TkinterApp.unbind_all" class="function">unbind_all</dd>
-                <dd id="TkinterApp.bind_class" class="function">bind_class</dd>
-                <dd id="TkinterApp.unbind_class" class="function">unbind_class</dd>
-                <dd id="TkinterApp.mainloop" class="function">mainloop</dd>
-                <dd id="TkinterApp.quit" class="function">quit</dd>
-                <dd id="TkinterApp.nametowidget" class="function">nametowidget</dd>
-                <dd id="TkinterApp.register" class="function">register</dd>
-                <dd id="TkinterApp.configure" class="function">configure</dd>
-                <dd id="TkinterApp.config" class="function">config</dd>
-                <dd id="TkinterApp.cget" class="function">cget</dd>
-                <dd id="TkinterApp.keys" class="function">keys</dd>
-                <dd id="TkinterApp.pack_propagate" class="function">pack_propagate</dd>
-                <dd id="TkinterApp.propagate" class="function">propagate</dd>
-                <dd id="TkinterApp.pack_slaves" class="function">pack_slaves</dd>
-                <dd id="TkinterApp.slaves" class="function">slaves</dd>
-                <dd id="TkinterApp.place_slaves" class="function">place_slaves</dd>
-                <dd id="TkinterApp.grid_anchor" class="function">grid_anchor</dd>
-                <dd id="TkinterApp.anchor" class="function">anchor</dd>
-                <dd id="TkinterApp.grid_bbox" class="function">grid_bbox</dd>
-                <dd id="TkinterApp.bbox" class="function">bbox</dd>
-                <dd id="TkinterApp.grid_columnconfigure" class="function">grid_columnconfigure</dd>
-                <dd id="TkinterApp.columnconfigure" class="function">columnconfigure</dd>
-                <dd id="TkinterApp.grid_location" class="function">grid_location</dd>
-                <dd id="TkinterApp.grid_propagate" class="function">grid_propagate</dd>
-                <dd id="TkinterApp.grid_rowconfigure" class="function">grid_rowconfigure</dd>
-                <dd id="TkinterApp.rowconfigure" class="function">rowconfigure</dd>
-                <dd id="TkinterApp.grid_size" class="function">grid_size</dd>
-                <dd id="TkinterApp.size" class="function">size</dd>
-                <dd id="TkinterApp.grid_slaves" class="function">grid_slaves</dd>
-                <dd id="TkinterApp.event_add" class="function">event_add</dd>
-                <dd id="TkinterApp.event_delete" class="function">event_delete</dd>
-                <dd id="TkinterApp.event_generate" class="function">event_generate</dd>
-                <dd id="TkinterApp.event_info" class="function">event_info</dd>
-                <dd id="TkinterApp.image_names" class="function">image_names</dd>
-                <dd id="TkinterApp.image_types" class="function">image_types</dd>
+                                <dd id="PhotoBooth.deletecommand" class="function">deletecommand</dd>
+                <dd id="PhotoBooth.tk_strictMotif" class="function">tk_strictMotif</dd>
+                <dd id="PhotoBooth.tk_bisque" class="function">tk_bisque</dd>
+                <dd id="PhotoBooth.tk_setPalette" class="function">tk_setPalette</dd>
+                <dd id="PhotoBooth.wait_variable" class="function">wait_variable</dd>
+                <dd id="PhotoBooth.waitvar" class="function">waitvar</dd>
+                <dd id="PhotoBooth.wait_window" class="function">wait_window</dd>
+                <dd id="PhotoBooth.wait_visibility" class="function">wait_visibility</dd>
+                <dd id="PhotoBooth.setvar" class="function">setvar</dd>
+                <dd id="PhotoBooth.getvar" class="function">getvar</dd>
+                <dd id="PhotoBooth.getint" class="function">getint</dd>
+                <dd id="PhotoBooth.getdouble" class="function">getdouble</dd>
+                <dd id="PhotoBooth.getboolean" class="function">getboolean</dd>
+                <dd id="PhotoBooth.focus_set" class="function">focus_set</dd>
+                <dd id="PhotoBooth.focus" class="function">focus</dd>
+                <dd id="PhotoBooth.focus_force" class="function">focus_force</dd>
+                <dd id="PhotoBooth.focus_get" class="function">focus_get</dd>
+                <dd id="PhotoBooth.focus_displayof" class="function">focus_displayof</dd>
+                <dd id="PhotoBooth.focus_lastfor" class="function">focus_lastfor</dd>
+                <dd id="PhotoBooth.tk_focusFollowsMouse" class="function">tk_focusFollowsMouse</dd>
+                <dd id="PhotoBooth.tk_focusNext" class="function">tk_focusNext</dd>
+                <dd id="PhotoBooth.tk_focusPrev" class="function">tk_focusPrev</dd>
+                <dd id="PhotoBooth.after" class="function">after</dd>
+                <dd id="PhotoBooth.after_idle" class="function">after_idle</dd>
+                <dd id="PhotoBooth.after_cancel" class="function">after_cancel</dd>
+                <dd id="PhotoBooth.bell" class="function">bell</dd>
+                <dd id="PhotoBooth.clipboard_get" class="function">clipboard_get</dd>
+                <dd id="PhotoBooth.clipboard_clear" class="function">clipboard_clear</dd>
+                <dd id="PhotoBooth.clipboard_append" class="function">clipboard_append</dd>
+                <dd id="PhotoBooth.grab_current" class="function">grab_current</dd>
+                <dd id="PhotoBooth.grab_release" class="function">grab_release</dd>
+                <dd id="PhotoBooth.grab_set" class="function">grab_set</dd>
+                <dd id="PhotoBooth.grab_set_global" class="function">grab_set_global</dd>
+                <dd id="PhotoBooth.grab_status" class="function">grab_status</dd>
+                <dd id="PhotoBooth.option_add" class="function">option_add</dd>
+                <dd id="PhotoBooth.option_clear" class="function">option_clear</dd>
+                <dd id="PhotoBooth.option_get" class="function">option_get</dd>
+                <dd id="PhotoBooth.option_readfile" class="function">option_readfile</dd>
+                <dd id="PhotoBooth.selection_clear" class="function">selection_clear</dd>
+                <dd id="PhotoBooth.selection_get" class="function">selection_get</dd>
+                <dd id="PhotoBooth.selection_handle" class="function">selection_handle</dd>
+                <dd id="PhotoBooth.selection_own" class="function">selection_own</dd>
+                <dd id="PhotoBooth.selection_own_get" class="function">selection_own_get</dd>
+                <dd id="PhotoBooth.send" class="function">send</dd>
+                <dd id="PhotoBooth.lower" class="function">lower</dd>
+                <dd id="PhotoBooth.tkraise" class="function">tkraise</dd>
+                <dd id="PhotoBooth.lift" class="function">lift</dd>
+                <dd id="PhotoBooth.winfo_atom" class="function">winfo_atom</dd>
+                <dd id="PhotoBooth.winfo_atomname" class="function">winfo_atomname</dd>
+                <dd id="PhotoBooth.winfo_cells" class="function">winfo_cells</dd>
+                <dd id="PhotoBooth.winfo_children" class="function">winfo_children</dd>
+                <dd id="PhotoBooth.winfo_class" class="function">winfo_class</dd>
+                <dd id="PhotoBooth.winfo_colormapfull" class="function">winfo_colormapfull</dd>
+                <dd id="PhotoBooth.winfo_containing" class="function">winfo_containing</dd>
+                <dd id="PhotoBooth.winfo_depth" class="function">winfo_depth</dd>
+                <dd id="PhotoBooth.winfo_exists" class="function">winfo_exists</dd>
+                <dd id="PhotoBooth.winfo_fpixels" class="function">winfo_fpixels</dd>
+                <dd id="PhotoBooth.winfo_geometry" class="function">winfo_geometry</dd>
+                <dd id="PhotoBooth.winfo_height" class="function">winfo_height</dd>
+                <dd id="PhotoBooth.winfo_id" class="function">winfo_id</dd>
+                <dd id="PhotoBooth.winfo_interps" class="function">winfo_interps</dd>
+                <dd id="PhotoBooth.winfo_ismapped" class="function">winfo_ismapped</dd>
+                <dd id="PhotoBooth.winfo_manager" class="function">winfo_manager</dd>
+                <dd id="PhotoBooth.winfo_name" class="function">winfo_name</dd>
+                <dd id="PhotoBooth.winfo_parent" class="function">winfo_parent</dd>
+                <dd id="PhotoBooth.winfo_pathname" class="function">winfo_pathname</dd>
+                <dd id="PhotoBooth.winfo_pixels" class="function">winfo_pixels</dd>
+                <dd id="PhotoBooth.winfo_pointerx" class="function">winfo_pointerx</dd>
+                <dd id="PhotoBooth.winfo_pointerxy" class="function">winfo_pointerxy</dd>
+                <dd id="PhotoBooth.winfo_pointery" class="function">winfo_pointery</dd>
+                <dd id="PhotoBooth.winfo_reqheight" class="function">winfo_reqheight</dd>
+                <dd id="PhotoBooth.winfo_reqwidth" class="function">winfo_reqwidth</dd>
+                <dd id="PhotoBooth.winfo_rgb" class="function">winfo_rgb</dd>
+                <dd id="PhotoBooth.winfo_rootx" class="function">winfo_rootx</dd>
+                <dd id="PhotoBooth.winfo_rooty" class="function">winfo_rooty</dd>
+                <dd id="PhotoBooth.winfo_screen" class="function">winfo_screen</dd>
+                <dd id="PhotoBooth.winfo_screencells" class="function">winfo_screencells</dd>
+                <dd id="PhotoBooth.winfo_screendepth" class="function">winfo_screendepth</dd>
+                <dd id="PhotoBooth.winfo_screenheight" class="function">winfo_screenheight</dd>
+                <dd id="PhotoBooth.winfo_screenmmheight" class="function">winfo_screenmmheight</dd>
+                <dd id="PhotoBooth.winfo_screenmmwidth" class="function">winfo_screenmmwidth</dd>
+                <dd id="PhotoBooth.winfo_screenvisual" class="function">winfo_screenvisual</dd>
+                <dd id="PhotoBooth.winfo_screenwidth" class="function">winfo_screenwidth</dd>
+                <dd id="PhotoBooth.winfo_server" class="function">winfo_server</dd>
+                <dd id="PhotoBooth.winfo_toplevel" class="function">winfo_toplevel</dd>
+                <dd id="PhotoBooth.winfo_viewable" class="function">winfo_viewable</dd>
+                <dd id="PhotoBooth.winfo_visual" class="function">winfo_visual</dd>
+                <dd id="PhotoBooth.winfo_visualid" class="function">winfo_visualid</dd>
+                <dd id="PhotoBooth.winfo_visualsavailable" class="function">winfo_visualsavailable</dd>
+                <dd id="PhotoBooth.winfo_vrootheight" class="function">winfo_vrootheight</dd>
+                <dd id="PhotoBooth.winfo_vrootwidth" class="function">winfo_vrootwidth</dd>
+                <dd id="PhotoBooth.winfo_vrootx" class="function">winfo_vrootx</dd>
+                <dd id="PhotoBooth.winfo_vrooty" class="function">winfo_vrooty</dd>
+                <dd id="PhotoBooth.winfo_width" class="function">winfo_width</dd>
+                <dd id="PhotoBooth.winfo_x" class="function">winfo_x</dd>
+                <dd id="PhotoBooth.winfo_y" class="function">winfo_y</dd>
+                <dd id="PhotoBooth.update" class="function">update</dd>
+                <dd id="PhotoBooth.update_idletasks" class="function">update_idletasks</dd>
+                <dd id="PhotoBooth.bindtags" class="function">bindtags</dd>
+                <dd id="PhotoBooth.bind" class="function">bind</dd>
+                <dd id="PhotoBooth.unbind" class="function">unbind</dd>
+                <dd id="PhotoBooth.bind_all" class="function">bind_all</dd>
+                <dd id="PhotoBooth.unbind_all" class="function">unbind_all</dd>
+                <dd id="PhotoBooth.bind_class" class="function">bind_class</dd>
+                <dd id="PhotoBooth.unbind_class" class="function">unbind_class</dd>
+                <dd id="PhotoBooth.mainloop" class="function">mainloop</dd>
+                <dd id="PhotoBooth.quit" class="function">quit</dd>
+                <dd id="PhotoBooth.nametowidget" class="function">nametowidget</dd>
+                <dd id="PhotoBooth.register" class="function">register</dd>
+                <dd id="PhotoBooth.configure" class="function">configure</dd>
+                <dd id="PhotoBooth.config" class="function">config</dd>
+                <dd id="PhotoBooth.cget" class="function">cget</dd>
+                <dd id="PhotoBooth.keys" class="function">keys</dd>
+                <dd id="PhotoBooth.pack_propagate" class="function">pack_propagate</dd>
+                <dd id="PhotoBooth.propagate" class="function">propagate</dd>
+                <dd id="PhotoBooth.pack_slaves" class="function">pack_slaves</dd>
+                <dd id="PhotoBooth.slaves" class="function">slaves</dd>
+                <dd id="PhotoBooth.place_slaves" class="function">place_slaves</dd>
+                <dd id="PhotoBooth.grid_anchor" class="function">grid_anchor</dd>
+                <dd id="PhotoBooth.anchor" class="function">anchor</dd>
+                <dd id="PhotoBooth.grid_bbox" class="function">grid_bbox</dd>
+                <dd id="PhotoBooth.bbox" class="function">bbox</dd>
+                <dd id="PhotoBooth.grid_columnconfigure" class="function">grid_columnconfigure</dd>
+                <dd id="PhotoBooth.columnconfigure" class="function">columnconfigure</dd>
+                <dd id="PhotoBooth.grid_location" class="function">grid_location</dd>
+                <dd id="PhotoBooth.grid_propagate" class="function">grid_propagate</dd>
+                <dd id="PhotoBooth.grid_rowconfigure" class="function">grid_rowconfigure</dd>
+                <dd id="PhotoBooth.rowconfigure" class="function">rowconfigure</dd>
+                <dd id="PhotoBooth.grid_size" class="function">grid_size</dd>
+                <dd id="PhotoBooth.size" class="function">size</dd>
+                <dd id="PhotoBooth.grid_slaves" class="function">grid_slaves</dd>
+                <dd id="PhotoBooth.event_add" class="function">event_add</dd>
+                <dd id="PhotoBooth.event_delete" class="function">event_delete</dd>
+                <dd id="PhotoBooth.event_generate" class="function">event_generate</dd>
+                <dd id="PhotoBooth.event_info" class="function">event_info</dd>
+                <dd id="PhotoBooth.image_names" class="function">image_names</dd>
+                <dd id="PhotoBooth.image_types" class="function">image_types</dd>
 
             </div>
             <div><dt>tkinter.Wm</dt>
-                                <dd id="TkinterApp.wm_aspect" class="function">wm_aspect</dd>
-                <dd id="TkinterApp.aspect" class="function">aspect</dd>
-                <dd id="TkinterApp.wm_attributes" class="function">wm_attributes</dd>
-                <dd id="TkinterApp.attributes" class="function">attributes</dd>
-                <dd id="TkinterApp.wm_client" class="function">wm_client</dd>
-                <dd id="TkinterApp.client" class="function">client</dd>
-                <dd id="TkinterApp.wm_colormapwindows" class="function">wm_colormapwindows</dd>
-                <dd id="TkinterApp.colormapwindows" class="function">colormapwindows</dd>
-                <dd id="TkinterApp.wm_command" class="function">wm_command</dd>
-                <dd id="TkinterApp.command" class="function">command</dd>
-                <dd id="TkinterApp.wm_deiconify" class="function">wm_deiconify</dd>
-                <dd id="TkinterApp.deiconify" class="function">deiconify</dd>
-                <dd id="TkinterApp.wm_focusmodel" class="function">wm_focusmodel</dd>
-                <dd id="TkinterApp.focusmodel" class="function">focusmodel</dd>
-                <dd id="TkinterApp.wm_forget" class="function">wm_forget</dd>
-                <dd id="TkinterApp.forget" class="function">forget</dd>
-                <dd id="TkinterApp.wm_frame" class="function">wm_frame</dd>
-                <dd id="TkinterApp.frame" class="function">frame</dd>
-                <dd id="TkinterApp.wm_geometry" class="function">wm_geometry</dd>
-                <dd id="TkinterApp.geometry" class="function">geometry</dd>
-                <dd id="TkinterApp.wm_grid" class="function">wm_grid</dd>
-                <dd id="TkinterApp.grid" class="function">grid</dd>
-                <dd id="TkinterApp.wm_group" class="function">wm_group</dd>
-                <dd id="TkinterApp.group" class="function">group</dd>
-                <dd id="TkinterApp.wm_iconbitmap" class="function">wm_iconbitmap</dd>
-                <dd id="TkinterApp.iconbitmap" class="function">iconbitmap</dd>
-                <dd id="TkinterApp.wm_iconify" class="function">wm_iconify</dd>
-                <dd id="TkinterApp.iconify" class="function">iconify</dd>
-                <dd id="TkinterApp.wm_iconmask" class="function">wm_iconmask</dd>
-                <dd id="TkinterApp.iconmask" class="function">iconmask</dd>
-                <dd id="TkinterApp.wm_iconname" class="function">wm_iconname</dd>
-                <dd id="TkinterApp.iconname" class="function">iconname</dd>
-                <dd id="TkinterApp.wm_iconphoto" class="function">wm_iconphoto</dd>
-                <dd id="TkinterApp.iconphoto" class="function">iconphoto</dd>
-                <dd id="TkinterApp.wm_iconposition" class="function">wm_iconposition</dd>
-                <dd id="TkinterApp.iconposition" class="function">iconposition</dd>
-                <dd id="TkinterApp.wm_iconwindow" class="function">wm_iconwindow</dd>
-                <dd id="TkinterApp.iconwindow" class="function">iconwindow</dd>
-                <dd id="TkinterApp.wm_manage" class="function">wm_manage</dd>
-                <dd id="TkinterApp.manage" class="function">manage</dd>
-                <dd id="TkinterApp.wm_maxsize" class="function">wm_maxsize</dd>
-                <dd id="TkinterApp.maxsize" class="function">maxsize</dd>
-                <dd id="TkinterApp.wm_minsize" class="function">wm_minsize</dd>
-                <dd id="TkinterApp.minsize" class="function">minsize</dd>
-                <dd id="TkinterApp.wm_overrideredirect" class="function">wm_overrideredirect</dd>
-                <dd id="TkinterApp.overrideredirect" class="function">overrideredirect</dd>
-                <dd id="TkinterApp.wm_positionfrom" class="function">wm_positionfrom</dd>
-                <dd id="TkinterApp.positionfrom" class="function">positionfrom</dd>
-                <dd id="TkinterApp.wm_protocol" class="function">wm_protocol</dd>
-                <dd id="TkinterApp.protocol" class="function">protocol</dd>
-                <dd id="TkinterApp.wm_resizable" class="function">wm_resizable</dd>
-                <dd id="TkinterApp.resizable" class="function">resizable</dd>
-                <dd id="TkinterApp.wm_sizefrom" class="function">wm_sizefrom</dd>
-                <dd id="TkinterApp.sizefrom" class="function">sizefrom</dd>
-                <dd id="TkinterApp.wm_state" class="function">wm_state</dd>
-                <dd id="TkinterApp.state" class="function">state</dd>
-                <dd id="TkinterApp.wm_title" class="function">wm_title</dd>
-                <dd id="TkinterApp.title" class="function">title</dd>
-                <dd id="TkinterApp.wm_transient" class="function">wm_transient</dd>
-                <dd id="TkinterApp.transient" class="function">transient</dd>
-                <dd id="TkinterApp.wm_withdraw" class="function">wm_withdraw</dd>
-                <dd id="TkinterApp.withdraw" class="function">withdraw</dd>
+                                <dd id="PhotoBooth.wm_aspect" class="function">wm_aspect</dd>
+                <dd id="PhotoBooth.aspect" class="function">aspect</dd>
+                <dd id="PhotoBooth.wm_attributes" class="function">wm_attributes</dd>
+                <dd id="PhotoBooth.attributes" class="function">attributes</dd>
+                <dd id="PhotoBooth.wm_client" class="function">wm_client</dd>
+                <dd id="PhotoBooth.client" class="function">client</dd>
+                <dd id="PhotoBooth.wm_colormapwindows" class="function">wm_colormapwindows</dd>
+                <dd id="PhotoBooth.colormapwindows" class="function">colormapwindows</dd>
+                <dd id="PhotoBooth.wm_command" class="function">wm_command</dd>
+                <dd id="PhotoBooth.command" class="function">command</dd>
+                <dd id="PhotoBooth.wm_deiconify" class="function">wm_deiconify</dd>
+                <dd id="PhotoBooth.deiconify" class="function">deiconify</dd>
+                <dd id="PhotoBooth.wm_focusmodel" class="function">wm_focusmodel</dd>
+                <dd id="PhotoBooth.focusmodel" class="function">focusmodel</dd>
+                <dd id="PhotoBooth.wm_forget" class="function">wm_forget</dd>
+                <dd id="PhotoBooth.forget" class="function">forget</dd>
+                <dd id="PhotoBooth.wm_frame" class="function">wm_frame</dd>
+                <dd id="PhotoBooth.frame" class="function">frame</dd>
+                <dd id="PhotoBooth.wm_geometry" class="function">wm_geometry</dd>
+                <dd id="PhotoBooth.geometry" class="function">geometry</dd>
+                <dd id="PhotoBooth.wm_grid" class="function">wm_grid</dd>
+                <dd id="PhotoBooth.grid" class="function">grid</dd>
+                <dd id="PhotoBooth.wm_group" class="function">wm_group</dd>
+                <dd id="PhotoBooth.group" class="function">group</dd>
+                <dd id="PhotoBooth.wm_iconbitmap" class="function">wm_iconbitmap</dd>
+                <dd id="PhotoBooth.iconbitmap" class="function">iconbitmap</dd>
+                <dd id="PhotoBooth.wm_iconify" class="function">wm_iconify</dd>
+                <dd id="PhotoBooth.iconify" class="function">iconify</dd>
+                <dd id="PhotoBooth.wm_iconmask" class="function">wm_iconmask</dd>
+                <dd id="PhotoBooth.iconmask" class="function">iconmask</dd>
+                <dd id="PhotoBooth.wm_iconname" class="function">wm_iconname</dd>
+                <dd id="PhotoBooth.iconname" class="function">iconname</dd>
+                <dd id="PhotoBooth.wm_iconphoto" class="function">wm_iconphoto</dd>
+                <dd id="PhotoBooth.iconphoto" class="function">iconphoto</dd>
+                <dd id="PhotoBooth.wm_iconposition" class="function">wm_iconposition</dd>
+                <dd id="PhotoBooth.iconposition" class="function">iconposition</dd>
+                <dd id="PhotoBooth.wm_iconwindow" class="function">wm_iconwindow</dd>
+                <dd id="PhotoBooth.iconwindow" class="function">iconwindow</dd>
+                <dd id="PhotoBooth.wm_manage" class="function">wm_manage</dd>
+                <dd id="PhotoBooth.manage" class="function">manage</dd>
+                <dd id="PhotoBooth.wm_maxsize" class="function">wm_maxsize</dd>
+                <dd id="PhotoBooth.maxsize" class="function">maxsize</dd>
+                <dd id="PhotoBooth.wm_minsize" class="function">wm_minsize</dd>
+                <dd id="PhotoBooth.minsize" class="function">minsize</dd>
+                <dd id="PhotoBooth.wm_overrideredirect" class="function">wm_overrideredirect</dd>
+                <dd id="PhotoBooth.overrideredirect" class="function">overrideredirect</dd>
+                <dd id="PhotoBooth.wm_positionfrom" class="function">wm_positionfrom</dd>
+                <dd id="PhotoBooth.positionfrom" class="function">positionfrom</dd>
+                <dd id="PhotoBooth.wm_protocol" class="function">wm_protocol</dd>
+                <dd id="PhotoBooth.protocol" class="function">protocol</dd>
+                <dd id="PhotoBooth.wm_resizable" class="function">wm_resizable</dd>
+                <dd id="PhotoBooth.resizable" class="function">resizable</dd>
+                <dd id="PhotoBooth.wm_sizefrom" class="function">wm_sizefrom</dd>
+                <dd id="PhotoBooth.sizefrom" class="function">sizefrom</dd>
+                <dd id="PhotoBooth.wm_state" class="function">wm_state</dd>
+                <dd id="PhotoBooth.state" class="function">state</dd>
+                <dd id="PhotoBooth.wm_title" class="function">wm_title</dd>
+                <dd id="PhotoBooth.title" class="function">title</dd>
+                <dd id="PhotoBooth.wm_transient" class="function">wm_transient</dd>
+                <dd id="PhotoBooth.transient" class="function">transient</dd>
+                <dd id="PhotoBooth.wm_withdraw" class="function">wm_withdraw</dd>
+                <dd id="PhotoBooth.withdraw" class="function">withdraw</dd>
 
             </div>
                                 </dl>
