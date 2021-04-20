@@ -20,14 +20,14 @@ class FilterFrame(Toplevel):
         self.cancel_button = Button(master=self, text="Cancel")
         self.apply_button = Button(master=self, text="Apply")
 
-        self.negative_button.bind("<ButtonRelease>", self.negative_button_released)
-        self.black_white_button.bind("<ButtonRelease>", self.black_white_released)
-        self.sepia_button.bind("<ButtonRelease>", self.sepia_button_released)
-        self.emboss_button.bind("<ButtonRelease>", self.emboss_button_released)
-        self.gaussian_blur_button.bind("<ButtonRelease>", self.gaussian_blur_button_released)
-        self.median_blur_button.bind("<ButtonRelease>", self.median_blur_button_released)
-        self.apply_button.bind("<ButtonRelease>", self.apply_button_released)
-        self.cancel_button.bind("<ButtonRelease>", self.cancel_button_released)
+        self.negative_button.bind("<ButtonRelease>", self.__negative_button_released)
+        self.black_white_button.bind("<ButtonRelease>", self.__black_white_released)
+        self.sepia_button.bind("<ButtonRelease>", self.__sepia_button_released)
+        self.emboss_button.bind("<ButtonRelease>", self.__emboss_button_released)
+        self.gaussian_blur_button.bind("<ButtonRelease>", self.__gaussian_blur_button_released)
+        self.median_blur_button.bind("<ButtonRelease>", self.__median_blur_button_released)
+        self.apply_button.bind("<ButtonRelease>", self.__apply_button_released)
+        self.cancel_button.bind("<ButtonRelease>", self.__cancel_button_released)
 
         self.negative_button.pack()
         self.black_white_button.pack()
@@ -38,68 +38,68 @@ class FilterFrame(Toplevel):
         self.cancel_button.pack(side=RIGHT)
         self.apply_button.pack()
 
-    def negative_button_released(self, event):
-        self.negative()
-        self.show_image()
+    def __negative_button_released(self, event):
+        self.__negative()
+        self.__show_image()
 
-    def black_white_released(self, event):
-        self.black_white()
-        self.show_image()
+    def __black_white_released(self, event):
+        self.__black_white()
+        self.__show_image()
 
-    def sepia_button_released(self, event):
-        self.sepia()
-        self.show_image()
+    def __sepia_button_released(self, event):
+        self.__sepia()
+        self.__show_image()
 
-    def emboss_button_released(self, event):
-        self.emboss()
-        self.show_image()
+    def __emboss_button_released(self, event):
+        self.__emboss()
+        self.__show_image()
 
-    def gaussian_blur_button_released(self, event):
-        self.gaussian_blur()
-        self.show_image()
+    def __gaussian_blur_button_released(self, event):
+        self.__gaussian_blur()
+        self.__show_image()
 
-    def median_blur_button_released(self, event):
-        self.gaussian_blur()
-        self.show_image()
+    def __median_blur_button_released(self, event):
+        self.__gaussian_blur()
+        self.__show_image()
 
-    def apply_button_released(self, event):
+    def __apply_button_released(self, event):
         self.master.processed_image = self.filtered_image
-        self.show_image()
-        self.close()
+        self.__show_image()
+        self.__close()
 
-    def cancel_button_released(self, event):
+    def __cancel_button_released(self, event):
         self.master.image_viewer.show_image()
-        self.close()
+        self.__close()
 
-    def show_image(self):
+    def __show_image(self):
         self.master.image_viewer.show_image(img=self.filtered_image)
 
-    def negative(self):
+    def __negative(self):
         self.filtered_image = cv2.bitwise_not(self.original_image)
 
-    def black_white(self):
+    def __black_white(self):
         self.filtered_image = cv2.cvtColor(self.original_image, cv2.COLOR_BGR2GRAY)
         self.filtered_image = cv2.cvtColor(self.filtered_image, cv2.COLOR_GRAY2BGR)
 
-    def sepia(self):
+    def __sepia(self):
         kernel = np.array([[0.272, 0.534, 0.131],
                            [0.349, 0.686, 0.168],
                            [0.393, 0.769, 0.189]])
 
         self.filtered_image = cv2.filter2D(self.original_image, -1, kernel)
 
-    def emboss(self):
+    def __emboss(self):
         kernel = np.array([[0, -1, -1],
                            [1, 0, -1],
                            [1, 1, 0]])
 
         self.filtered_image = cv2.filter2D(self.original_image, -1, kernel)
 
-    def gaussian_blur(self):
+    def __gaussian_blur(self):
         self.filtered_image = cv2.GaussianBlur(self.original_image, (41, 41), 0)
 
-    def median_blur(self):
+    def __median_blur(self):
         self.filtered_image = cv2.medianBlur(self.original_image, 41)
 
-    def close(self):
+    def __close(self):
         self.destroy()

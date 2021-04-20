@@ -31,9 +31,9 @@ class AdjustFrame(Toplevel):
 
         self.brightness_scale.set(1)
 
-        self.apply_button.bind("<ButtonRelease>", self.apply_button_released)
-        self.preview_button.bind("<ButtonRelease>", self.show_button_release)
-        self.cancel_button.bind("<ButtonRelease>", self.cancel_button_released)
+        self.apply_button.bind("<ButtonRelease>", self.__apply_button_released)
+        self.preview_button.bind("<ButtonRelease>", self.__show_button_release)
+        self.cancel_button.bind("<ButtonRelease>", self.__cancel_button_released)
 
         self.brightness_label.pack()
         self.brightness_scale.pack()
@@ -47,11 +47,12 @@ class AdjustFrame(Toplevel):
         self.preview_button.pack(side=RIGHT)
         self.apply_button.pack()
 
-    def apply_button_released(self, event):
+    def __apply_button_released(self, event):
+        self.__show_button_release(event)
         self.master.processed_image = self.processing_image
         self.close()
 
-    def show_button_release(self, event):
+    def __show_button_release(self, event):
         self.processing_image = cv2.convertScaleAbs(self.original_image, alpha=self.brightness_scale.get())
         b, g, r = cv2.split(self.processing_image)
 
@@ -63,14 +64,14 @@ class AdjustFrame(Toplevel):
             cv2.add(r_value, self.r_scale.get(), r_value)
 
         self.processing_image = cv2.merge((b, g, r))
-        self.show_image(self.processing_image)
+        self.__show_image(self.processing_image)
 
-    def cancel_button_released(self, event):
+    def __cancel_button_released(self, event):
         self.close()
 
-    def show_image(self, img=None):
+    def __show_image(self, img=None):
         self.master.image_viewer.show_image(img=img)
 
     def close(self):
-        self.show_image()
+        self.__show_image()
         self.destroy()

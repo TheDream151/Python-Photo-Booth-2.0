@@ -40,11 +40,11 @@ class PhotoBooth(tk.Tk):
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(Camera)
+        self.__show_frame(Camera)
         menu_bar = tk.Menu(self)
         file_menu = tk.Menu(menu_bar, tearoff=0)
-        file_menu.add_command(label="Camera", command=lambda: self.show_frame(Camera))
-        file_menu.add_command(label="Image Editor", command=lambda: self.show_frame(ImageEditor))
+        file_menu.add_command(label="Camera", command=lambda: self.__show_frame(Camera))
+        file_menu.add_command(label="Image Editor", command=lambda: self.__show_frame(ImageEditor))
         file_menu.add_separator()
         file_menu.add_command(label="Exit", command=self.quit)
         menu_bar.add_cascade(label="File", menu=file_menu)
@@ -53,6 +53,6 @@ class PhotoBooth(tk.Tk):
 
     # to display the current frame passed as
     # parameter
-    def show_frame(self, cont):
+    def __show_frame(self, cont):
         frame = self.frames[cont]
         frame.tkraise()

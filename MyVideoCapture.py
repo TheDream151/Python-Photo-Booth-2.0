@@ -49,7 +49,7 @@ class MyVideoCapture:
 
             if self.filter_bool is True:
                 # self.apply_hat_filter(frame)
-                self.apply_filter(frame)
+                self.__apply_filter(frame)
 
             if ret:
                 # Return a boolean success flag and the current frame converted to BGR
@@ -64,7 +64,7 @@ class MyVideoCapture:
         if self.vid.isOpened():
             self.vid.release()
 
-    def apply_filter(self, frame):
+    def __apply_filter(self, frame):
 
         img_h, img_w = frame.shape[:2]
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
