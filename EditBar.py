@@ -42,6 +42,10 @@ class EditBar(Frame):
         self.clear_button.pack()
 
     def __new_button_released(self, event):
+        """
+        Open the file manager frame and has the user select an image on button press
+        @:param event the button press event passed by the pressing of the button
+        """
         if self.winfo_containing(event.x_root, event.y_root) == self.new_button:
             if self.master.is_draw_state:
                 self.master.image_viewer.deactivate_draw()
@@ -59,6 +63,10 @@ class EditBar(Frame):
                 self.master.is_image_selected = True
 
     def __save_button_released(self, event):
+        """
+        Saves the image in place on button press
+        @:param event the button press event passed by the pressing of the button
+        """
         if self.winfo_containing(event.x_root, event.y_root) == self.save_button:
             if self.master.is_image_selected:
                 if self.master.is_crop_state:
@@ -71,6 +79,10 @@ class EditBar(Frame):
                 cv2.imwrite(image_filename, save_image)
 
     def __save_as_button_released(self, event):
+        """
+        Opens the file manager dialog and allows the user to save the image as a new file on button press
+        @:param event the button press event passed by the pressing of the button
+        """
         if self.winfo_containing(event.x_root, event.y_root) == self.save_as_button:
             if self.master.is_image_selected:
                 if self.master.is_draw_state:
@@ -88,6 +100,10 @@ class EditBar(Frame):
                 self.master.filename = filename
 
     def __draw_button_released(self, event):
+        """
+        Toggles the drawing functionality of the program on button press
+        @:param event the button press event passed by the pressing of the button
+        """
         if self.winfo_containing(event.x_root, event.y_root) == self.draw_button:
             if self.master.is_image_selected:
                 if self.master.is_crop_state:
@@ -98,6 +114,10 @@ class EditBar(Frame):
                     self.master.image_viewer.activate_draw()
 
     def __crop_button_released(self, event):
+        """
+        Toggles the cropping functionality of the program on button press
+        @:param event the button press event passed by the pressing of the button
+        """
         if self.winfo_containing(event.x_root, event.y_root) == self.crop_button:
             if self.master.is_image_selected:
                 if self.master.is_draw_state:
@@ -108,6 +128,10 @@ class EditBar(Frame):
                     self.master.image_viewer.activate_crop()
 
     def __filter_button_released(self, event):
+        """
+        Opens the filter frame on button press
+        @:param event the button press event passed by the pressing of the button
+        """
         if self.winfo_containing(event.x_root, event.y_root) == self.filter_button:
             if self.master.is_image_selected:
                 if self.master.is_draw_state:
@@ -119,6 +143,10 @@ class EditBar(Frame):
                 self.master.filter_frame.grab_set()
 
     def __adjust_button_released(self, event):
+        """
+        Opens the adjust frame on button press
+        @:param event the button press event passed by the pressing of the button
+        """
         if self.winfo_containing(event.x_root, event.y_root) == self.adjust_button:
             if self.master.is_image_selected:
                 if self.master.is_draw_state:
@@ -130,6 +158,10 @@ class EditBar(Frame):
                 self.master.adjust_frame.grab_set()
 
     def __clear_button_released(self, event):
+        """
+        Clears the edits to the image on button press
+        @:param event the button press event passed by the pressing of the button
+        """
         if self.winfo_containing(event.x_root, event.y_root) == self.clear_button:
             if self.master.is_image_selected:
                 if self.master.is_draw_state:
@@ -141,5 +173,8 @@ class EditBar(Frame):
                 self.master.image_viewer.show_image()
 
     def __choose_color(self):
+        """
+        On button press opens the color picker frame
+        """
         # variable to store hexadecimal code of color
         self.master.image_viewer.set_color_code(colorchooser.askcolor(title="Choose color"))

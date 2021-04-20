@@ -48,11 +48,21 @@ class AdjustFrame(Toplevel):
         self.apply_button.pack()
 
     def __apply_button_released(self, event):
+        """
+        Applies the change in attributes to the image on button release
+        @:param event this parameter takes the button's event, this is not used but is required for the button to call
+        the function
+        """
         self.__show_button_release(event)
         self.master.processed_image = self.processing_image
         self.close()
 
     def __show_button_release(self, event):
+        """
+        Shows a preview of the image with the change in attributes on button release
+        @:param event this parameter takes the button's event, this is not used but is required for the button to call
+        the function
+        """
         self.processing_image = cv2.convertScaleAbs(self.original_image, alpha=self.brightness_scale.get())
         b, g, r = cv2.split(self.processing_image)
 
@@ -67,11 +77,22 @@ class AdjustFrame(Toplevel):
         self.__show_image(self.processing_image)
 
     def __cancel_button_released(self, event):
+        """
+        Closes the window
+        @:param event this parameter takes the button's event, this is not used but is required for the button to call
+        the function
+        """
         self.close()
 
     def __show_image(self, img=None):
+        """
+        Displays the image in the image viewer class
+        """
         self.master.image_viewer.show_image(img=img)
 
     def close(self):
+        """
+        Displays the image and closes the frame
+        """
         self.__show_image()
         self.destroy()

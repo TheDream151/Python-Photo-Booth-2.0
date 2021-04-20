@@ -36,13 +36,21 @@ class Camera(tk.Frame):
         self.__update()
 
     def __snapshot(self):
+        """
+        Captures the current camera frame and saves it to the photos folder
+        """
         # Get a frame from the video source
         ret, frame = self.vid.get_frame()
+        frame = cv2.flip(frame, 1)
         if ret:
             cv2.imwrite("photos/frame-" + time.strftime("%d-%m-%Y-%H-%M-%S") + ".jpg",
                         cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
 
     def __toggle_time(self):
+        """
+        Saves the current time
+        Toggles the countdown variable for determining if a timer photo is being taken
+        """
         self.prev = time.time()
         if self.countdown:
             self.timer = 10
@@ -51,9 +59,12 @@ class Camera(tk.Frame):
             self.countdown = True
 
     def __update(self):
+        """
+        Updates the camera feed
+        """
         # Get a frame from the video source
         ret, frame = self.vid.get_frame()
-
+        frame = cv2.flip(frame,1)
         if self.countdown:
             font = cv2.FONT_HERSHEY_SIMPLEX
             cv2.putText(frame, str(self.timer),
