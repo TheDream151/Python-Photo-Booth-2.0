@@ -34,18 +34,6 @@
                                 <a class="function" href="#AdjustFrame.__init__">AdjustFrame</a>
                         </li>
                         <li>
-                                <a class="function" href="#AdjustFrame.apply_button_released">apply_button_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#AdjustFrame.show_button_release">show_button_release</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#AdjustFrame.cancel_button_released">cancel_button_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#AdjustFrame.show_image">show_image</a>
-                        </li>
-                        <li>
                                 <a class="function" href="#AdjustFrame.close">close</a>
                         </li>
                 </ul>
@@ -102,9 +90,9 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">brightness_scale</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">preview_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_button_release</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__apply_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">preview_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__show_button_release</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cancel_button_released</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">brightness_label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">brightness_scale</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
@@ -118,11 +106,22 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">preview_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">RIGHT</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">apply_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__apply_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies the change in attributes to the image on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_button_release</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">processed_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processing_image</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">show_button_release</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__show_button_release</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Shows a preview of the image with the change in attributes on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">processing_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">convertScaleAbs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">brightness_scale</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
         <span class="n">b</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processing_image</span><span class="p">)</span>
 
@@ -134,16 +133,27 @@
             <span class="n">cv2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">r_value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">r_scale</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">r_value</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">processing_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">merge</span><span class="p">((</span><span class="n">b</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processing_image</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processing_image</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">cancel_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__cancel_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Closes the window</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">show_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__show_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Displays the image in the image viewer class</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">show_image</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">img</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Displays the image and closes the frame</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
 </pre></div>
 
@@ -190,9 +200,9 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">brightness_scale</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">preview_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_button_release</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__apply_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">preview_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__show_button_release</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cancel_button_released</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">brightness_label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">brightness_scale</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
@@ -206,11 +216,22 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">preview_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">RIGHT</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">apply_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__apply_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies the change in attributes to the image on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_button_release</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">processed_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processing_image</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">show_button_release</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__show_button_release</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Shows a preview of the image with the change in attributes on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">processing_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">convertScaleAbs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">brightness_scale</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
         <span class="n">b</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processing_image</span><span class="p">)</span>
 
@@ -222,16 +243,27 @@
             <span class="n">cv2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">r_value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">r_scale</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">r_value</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">processing_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">merge</span><span class="p">((</span><span class="n">b</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processing_image</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processing_image</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">cancel_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__cancel_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Closes the window</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">show_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__show_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Displays the image in the image viewer class</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">show_image</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">img</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Displays the image and closes the frame</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
 </pre></div>
 
@@ -277,9 +309,9 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">brightness_scale</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">preview_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_button_release</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__apply_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">preview_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__show_button_release</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cancel_button_released</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">brightness_label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">brightness_scale</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
@@ -306,94 +338,6 @@ use, visual, width.</p>
 
 
                             </div>
-                            <div id="AdjustFrame.apply_button_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#AdjustFrame.apply_button_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">apply_button_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">apply_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">processed_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processing_image</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="AdjustFrame.show_button_release" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#AdjustFrame.show_button_release">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">show_button_release</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">show_button_release</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">processing_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">convertScaleAbs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">brightness_scale</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-        <span class="n">b</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processing_image</span><span class="p">)</span>
-
-        <span class="k">for</span> <span class="n">b_value</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
-            <span class="n">cv2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">b_value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b_scale</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">b_value</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">g_value</span> <span class="ow">in</span> <span class="n">g</span><span class="p">:</span>
-            <span class="n">cv2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">g_value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">g_scale</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">g_value</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">r_value</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
-            <span class="n">cv2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">r_value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">r_scale</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">r_value</span><span class="p">)</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">processing_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">merge</span><span class="p">((</span><span class="n">b</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processing_image</span><span class="p">)</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="AdjustFrame.cancel_button_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#AdjustFrame.cancel_button_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">cancel_button_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">cancel_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="AdjustFrame.show_image" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#AdjustFrame.show_image">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">show_image</span><span class="signature">(self, img=None)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">show_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">show_image</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">img</span><span class="p">)</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
                             <div id="AdjustFrame.close" class="classattr">
                                         <div class="attr function"><a class="headerlink" href="#AdjustFrame.close">#&nbsp;&nbsp</a>
 
@@ -405,13 +349,18 @@ use, visual, width.</p>
                 <details>
             <summary>View Source</summary>
             <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Displays the image and closes the frame</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
 </pre></div>
 
         </details>
 
-    
+            <div class="docstring"><p>Displays the image and closes the frame</p>
+</div>
+
 
                             </div>
                             <div class="inherited">

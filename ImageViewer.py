@@ -24,6 +24,10 @@ class ImageViewer(Frame):
         self.canvas.place(relx=0.5, rely=0.5, anchor=CENTER)
 
     def show_image(self, img=None):
+        """
+        Displays the image passed to the function
+        @:param img is the image to be displayed which is defaulted to None
+        """
         self.clear_canvas()
 
         if img is None:
@@ -55,15 +59,25 @@ class ImageViewer(Frame):
         self.canvas.create_image(new_width / 2, new_height / 2, anchor=CENTER, image=self.shown_image)
 
     def set_color_code(self, colorCode):
+        """
+        Sets the colorCode to the passed value
+        @:param colorCode the new colorCode value
+        """
         self.colorCode = colorCode
 
     def activate_draw(self):
+        """
+        Activates the draw functionality
+        """
         self.canvas.bind("<ButtonPress>", self.start_draw)
         self.canvas.bind("<B1-Motion>", self.draw)
 
         self.master.is_draw_state = True
 
     def activate_crop(self):
+        """
+        Activates the crop functionality
+        """
         self.canvas.bind("<ButtonPress>", self.start_crop)
         self.canvas.bind("<B1-Motion>", self.crop)
         self.canvas.bind("<ButtonRelease>", self.end_crop)
@@ -71,12 +85,18 @@ class ImageViewer(Frame):
         self.master.is_crop_state = True
 
     def deactivate_draw(self):
+        """
+        Deactivates the draw functionality
+        """
         self.canvas.unbind("<ButtonPress>")
         self.canvas.unbind("<B1-Motion>")
 
         self.master.is_draw_state = False
 
     def deactivate_crop(self):
+        """
+        Deactivates the crop functionality
+        """
         self.canvas.unbind("<ButtonPress>")
         self.canvas.unbind("<B1-Motion>")
         self.canvas.unbind("<ButtonRelease>")
@@ -84,10 +104,18 @@ class ImageViewer(Frame):
         self.master.is_crop_state = False
 
     def start_draw(self, event):
+        """
+        Begins the draw
+        @:param is the x and y cordinates of the mouse
+        """
         self.x = event.x
         self.y = event.y
 
     def draw(self, event):
+        """
+        Draws on the image
+        @:param is the x and y cordinates of the mouse
+        """
         self.draw_ids.append(self.canvas.create_line(self.x, self.y, event.x, event.y, width=2,
                                                      fill=self.colorCode[1], capstyle=ROUND, smooth=True))
 
@@ -100,10 +128,18 @@ class ImageViewer(Frame):
         self.y = event.y
 
     def start_crop(self, event):
+        """
+        Begins the crop
+        @:param is the x and y cordinates of the mouse
+        """
         self.crop_start_x = event.x
         self.crop_start_y = event.y
 
     def crop(self, event):
+        """
+        Crops the image
+        @:param is the x and y cordinates of the mouse
+        """
         if self.rectangle_id:
             self.canvas.delete(self.rectangle_id)
 
@@ -114,6 +150,10 @@ class ImageViewer(Frame):
                                                          self.crop_end_x, self.crop_end_y, width=1)
 
     def end_crop(self, event):
+        """
+        Ends the Crop
+        @:param an unused event parameter required due to how the function is called
+        """
         if self.crop_start_x <= self.crop_end_x and self.crop_start_y <= self.crop_end_y:
             start_x = int(self.crop_start_x * self.ratio)
             start_y = int(self.crop_start_y * self.ratio)
@@ -143,7 +183,13 @@ class ImageViewer(Frame):
         self.show_image()
 
     def clear_canvas(self):
+        """
+        Clears all edits to the image
+        """
         self.canvas.delete("all")
 
     def clear_draw(self):
+        """
+        Clears all drawings done on the image
+        """
         self.canvas.delete(self.draw_ids)

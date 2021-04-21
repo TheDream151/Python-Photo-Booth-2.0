@@ -33,54 +33,6 @@
                         <li>
                                 <a class="function" href="#FilterFrame.__init__">FilterFrame</a>
                         </li>
-                        <li>
-                                <a class="function" href="#FilterFrame.negative_button_released">negative_button_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#FilterFrame.black_white_released">black_white_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#FilterFrame.sepia_button_released">sepia_button_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#FilterFrame.emboss_button_released">emboss_button_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#FilterFrame.gaussian_blur_button_released">gaussian_blur_button_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#FilterFrame.median_blur_button_released">median_blur_button_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#FilterFrame.apply_button_released">apply_button_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#FilterFrame.cancel_button_released">cancel_button_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#FilterFrame.show_image">show_image</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#FilterFrame.negative">negative</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#FilterFrame.black_white">black_white</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#FilterFrame.sepia">sepia</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#FilterFrame.emboss">emboss</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#FilterFrame.gaussian_blur">gaussian_blur</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#FilterFrame.median_blur">median_blur</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#FilterFrame.close">close</a>
-                        </li>
                 </ul>
 
             </li>
@@ -124,14 +76,14 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Cancel&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Apply&quot;</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">negative_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">negative_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">black_white_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">black_white_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sepia_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sepia_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">emboss_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">emboss_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">gaussian_blur_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">gaussian_blur_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">median_blur_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">median_blur_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">negative_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__negative_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">black_white_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__black_white_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sepia_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__sepia_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">emboss_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__emboss_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gaussian_blur_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__gaussian_blur_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">median_blur_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__median_blur_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__apply_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cancel_button_released</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">negative_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">black_white_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
@@ -142,70 +94,118 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">RIGHT</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">negative_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">negative</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__negative_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies the negative filter to the previewable image on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__negative</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">black_white_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">black_white</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__black_white_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies the black and white filter to the previewable image on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__black_white</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">sepia_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sepia</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__sepia_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies the sepia filter to the previewable image on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__sepia</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">emboss_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">emboss</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__emboss_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies the emboss filter to the previewable image on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__emboss</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">gaussian_blur_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">gaussian_blur</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__gaussian_blur_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies the gaussian blur filter to the previewable image on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__gaussian_blur</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">median_blur_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">gaussian_blur</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__median_blur_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies the median blur filter to the previewable image on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__median_blur</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">apply_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__apply_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies the selected filter to the image and closes the screen on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">processed_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__close</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">cancel_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__cancel_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Displays the unaltered image and closes the frame</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__close</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">show_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__show_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Displays the altered image&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">show_image</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">negative</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__negative</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Converts the image to its negative&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_not</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">black_white</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__black_white</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Converts the image to black and white&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_GRAY2BGR</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">sepia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__sepia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Applies the sepia filter to the image&quot;&quot;&quot;</span>
         <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.272</span><span class="p">,</span> <span class="mf">0.534</span><span class="p">,</span> <span class="mf">0.131</span><span class="p">],</span>
                            <span class="p">[</span><span class="mf">0.349</span><span class="p">,</span> <span class="mf">0.686</span><span class="p">,</span> <span class="mf">0.168</span><span class="p">],</span>
                            <span class="p">[</span><span class="mf">0.393</span><span class="p">,</span> <span class="mf">0.769</span><span class="p">,</span> <span class="mf">0.189</span><span class="p">]])</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">emboss</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__emboss</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Applies the emboss filter to the image&quot;&quot;&quot;</span>
         <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
                            <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
                            <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">gaussian_blur</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__gaussian_blur</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Applies the gaussian blur filter to the image&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="p">(</span><span class="mi">41</span><span class="p">,</span> <span class="mi">41</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">median_blur</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__median_blur</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Applies the median filter to the image&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">medianBlur</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="mi">41</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Closes the filter frame&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
 </pre></div>
 
@@ -240,14 +240,14 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Cancel&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Apply&quot;</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">negative_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">negative_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">black_white_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">black_white_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sepia_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sepia_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">emboss_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">emboss_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">gaussian_blur_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">gaussian_blur_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">median_blur_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">median_blur_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">negative_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__negative_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">black_white_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__black_white_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sepia_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__sepia_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">emboss_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__emboss_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gaussian_blur_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__gaussian_blur_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">median_blur_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__median_blur_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__apply_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cancel_button_released</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">negative_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">black_white_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
@@ -258,70 +258,118 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">RIGHT</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">negative_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">negative</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__negative_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies the negative filter to the previewable image on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__negative</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">black_white_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">black_white</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__black_white_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies the black and white filter to the previewable image on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__black_white</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">sepia_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sepia</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__sepia_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies the sepia filter to the previewable image on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__sepia</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">emboss_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">emboss</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__emboss_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies the emboss filter to the previewable image on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__emboss</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">gaussian_blur_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">gaussian_blur</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__gaussian_blur_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies the gaussian blur filter to the previewable image on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__gaussian_blur</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">median_blur_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">gaussian_blur</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__median_blur_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies the median blur filter to the previewable image on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__median_blur</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">apply_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__apply_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies the selected filter to the image and closes the screen on button release</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">processed_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__show_image</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__close</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">cancel_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__cancel_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Displays the unaltered image and closes the frame</span>
+<span class="sd">        @:param event this parameter takes the button&#39;s event, this is not used but is required for the button to call</span>
+<span class="sd">        the function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__close</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">show_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__show_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Displays the altered image&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">show_image</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">negative</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__negative</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Converts the image to its negative&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_not</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">black_white</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__black_white</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Converts the image to black and white&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_GRAY2BGR</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">sepia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__sepia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Applies the sepia filter to the image&quot;&quot;&quot;</span>
         <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.272</span><span class="p">,</span> <span class="mf">0.534</span><span class="p">,</span> <span class="mf">0.131</span><span class="p">],</span>
                            <span class="p">[</span><span class="mf">0.349</span><span class="p">,</span> <span class="mf">0.686</span><span class="p">,</span> <span class="mf">0.168</span><span class="p">],</span>
                            <span class="p">[</span><span class="mf">0.393</span><span class="p">,</span> <span class="mf">0.769</span><span class="p">,</span> <span class="mf">0.189</span><span class="p">]])</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">emboss</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__emboss</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Applies the emboss filter to the image&quot;&quot;&quot;</span>
         <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
                            <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
                            <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">gaussian_blur</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__gaussian_blur</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Applies the gaussian blur filter to the image&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="p">(</span><span class="mi">41</span><span class="p">,</span> <span class="mi">41</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">median_blur</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__median_blur</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Applies the median filter to the image&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">medianBlur</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="mi">41</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Closes the filter frame&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
 </pre></div>
 
@@ -355,14 +403,14 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Cancel&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Apply&quot;</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">negative_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">negative_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">black_white_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">black_white_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sepia_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sepia_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">emboss_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">emboss_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">gaussian_blur_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">gaussian_blur_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">median_blur_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">median_blur_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">negative_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__negative_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">black_white_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__black_white_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sepia_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__sepia_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">emboss_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__emboss_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gaussian_blur_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__gaussian_blur_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">median_blur_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__median_blur_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__apply_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cancel_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cancel_button_released</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">negative_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">black_white_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
@@ -384,328 +432,6 @@ highlightcolor, highlightthickness, menu, relief, screen, takefocus,
 use, visual, width.</p>
 </div>
 
-
-                            </div>
-                            <div id="FilterFrame.negative_button_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#FilterFrame.negative_button_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">negative_button_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">negative_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">negative</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="FilterFrame.black_white_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#FilterFrame.black_white_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">black_white_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">black_white_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">black_white</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="FilterFrame.sepia_button_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#FilterFrame.sepia_button_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">sepia_button_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">sepia_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sepia</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="FilterFrame.emboss_button_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#FilterFrame.emboss_button_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">emboss_button_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">emboss_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">emboss</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="FilterFrame.gaussian_blur_button_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#FilterFrame.gaussian_blur_button_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">gaussian_blur_button_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">gaussian_blur_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">gaussian_blur</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="FilterFrame.median_blur_button_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#FilterFrame.median_blur_button_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">median_blur_button_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">median_blur_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">gaussian_blur</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="FilterFrame.apply_button_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#FilterFrame.apply_button_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">apply_button_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">apply_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">processed_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="FilterFrame.cancel_button_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#FilterFrame.cancel_button_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">cancel_button_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">cancel_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="FilterFrame.show_image" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#FilterFrame.show_image">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">show_image</span><span class="signature">(self)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">show_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">show_image</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span><span class="p">)</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="FilterFrame.negative" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#FilterFrame.negative">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">negative</span><span class="signature">(self)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">negative</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_not</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">)</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="FilterFrame.black_white" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#FilterFrame.black_white">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">black_white</span><span class="signature">(self)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">black_white</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_GRAY2BGR</span><span class="p">)</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="FilterFrame.sepia" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#FilterFrame.sepia">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">sepia</span><span class="signature">(self)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">sepia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.272</span><span class="p">,</span> <span class="mf">0.534</span><span class="p">,</span> <span class="mf">0.131</span><span class="p">],</span>
-                           <span class="p">[</span><span class="mf">0.349</span><span class="p">,</span> <span class="mf">0.686</span><span class="p">,</span> <span class="mf">0.168</span><span class="p">],</span>
-                           <span class="p">[</span><span class="mf">0.393</span><span class="p">,</span> <span class="mf">0.769</span><span class="p">,</span> <span class="mf">0.189</span><span class="p">]])</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="p">)</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="FilterFrame.emboss" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#FilterFrame.emboss">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">emboss</span><span class="signature">(self)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">emboss</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
-                           <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
-                           <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="p">)</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="FilterFrame.gaussian_blur" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#FilterFrame.gaussian_blur">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">gaussian_blur</span><span class="signature">(self)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">gaussian_blur</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="p">(</span><span class="mi">41</span><span class="p">,</span> <span class="mi">41</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="FilterFrame.median_blur" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#FilterFrame.median_blur">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">median_blur</span><span class="signature">(self)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">median_blur</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">medianBlur</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span> <span class="mi">41</span><span class="p">)</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="FilterFrame.close" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#FilterFrame.close">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">close</span><span class="signature">(self)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
-</pre></div>
-
-        </details>
-
-    
 
                             </div>
                             <div class="inherited">

@@ -54,5 +54,9 @@ class PhotoBooth(tk.Tk):
     # to display the current frame passed as
     # parameter
     def __show_frame(self, cont):
+        """
+        Displays the frame that is passed into the function
+        @:param cont is the frame to be displayed in the window
+        """
         frame = self.frames[cont]
         frame.tkraise()

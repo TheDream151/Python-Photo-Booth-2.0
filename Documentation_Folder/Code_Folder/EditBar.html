@@ -33,33 +33,6 @@
                         <li>
                                 <a class="function" href="#EditBar.__init__">EditBar</a>
                         </li>
-                        <li>
-                                <a class="function" href="#EditBar.new_button_released">new_button_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#EditBar.save_button_released">save_button_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#EditBar.save_as_button_released">save_as_button_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#EditBar.draw_button_released">draw_button_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#EditBar.crop_button_released">crop_button_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#EditBar.filter_button_released">filter_button_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#EditBar.adjust_button_released">adjust_button_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#EditBar.clear_button_released">clear_button_released</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#EditBar.choose_color">choose_color</a>
-                        </li>
                 </ul>
 
             </li>
@@ -95,7 +68,7 @@
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">Frame</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="o">=</span><span class="n">master</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;New&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Open&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Save&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">save_as_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Save As&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">draw_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Draw&quot;</span><span class="p">)</span>
@@ -103,16 +76,16 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">filter_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Filter&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">adjust_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Adjust&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Clear&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">color_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Select Color&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">choose_color</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Select Color&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__choose_color</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">save_as_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_as_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">draw_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">draw_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">crop_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">crop_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">filter_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">adjust_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjust_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">clear_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__new_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__save_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_as_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__save_as_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">draw_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__draw_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">crop_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__crop_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filter_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__filter_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">adjust_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__adjust_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clear_button_released</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
@@ -124,7 +97,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">adjust_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">new_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__new_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Open the file manager frame and has the user select an image on button press</span>
+<span class="sd">        @:param event the button press event passed by the pressing of the button</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_draw</span><span class="p">()</span>
@@ -141,7 +118,11 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span> <span class="o">=</span> <span class="kc">True</span>
 
-    <span class="k">def</span> <span class="nf">save_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__save_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Saves the image in place on button press</span>
+<span class="sd">        @:param event the button press event passed by the pressing of the button</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_crop_state</span><span class="p">:</span>
@@ -153,7 +134,11 @@
                 <span class="n">image_filename</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">filename</span>
                 <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">image_filename</span><span class="p">,</span> <span class="n">save_image</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">save_as_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__save_as_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Opens the file manager dialog and allows the user to save the image as a new file on button press</span>
+<span class="sd">        @:param event the button press event passed by the pressing of the button</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_as_button</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
@@ -170,7 +155,11 @@
 
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
 
-    <span class="k">def</span> <span class="nf">draw_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__draw_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Toggles the drawing functionality of the program on button press</span>
+<span class="sd">        @:param event the button press event passed by the pressing of the button</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">draw_button</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_crop_state</span><span class="p">:</span>
@@ -180,7 +169,11 @@
                 <span class="k">else</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">activate_draw</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">crop_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__crop_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Toggles the cropping functionality of the program on button press</span>
+<span class="sd">        @:param event the button press event passed by the pressing of the button</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">crop_button</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
@@ -190,7 +183,11 @@
                 <span class="k">else</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">activate_crop</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">filter_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__filter_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Opens the filter frame on button press</span>
+<span class="sd">        @:param event the button press event passed by the pressing of the button</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter_button</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
@@ -201,7 +198,11 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">filter_frame</span> <span class="o">=</span> <span class="n">FilterFrame</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">filter_frame</span><span class="o">.</span><span class="n">grab_set</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">adjust_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__adjust_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Opens the adjust frame on button press</span>
+<span class="sd">        @:param event the button press event passed by the pressing of the button</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjust_button</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
@@ -212,7 +213,11 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">adjust_frame</span> <span class="o">=</span> <span class="n">AdjustFrame</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">adjust_frame</span><span class="o">.</span><span class="n">grab_set</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">clear_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__clear_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Clears the edits to the image on button press</span>
+<span class="sd">        @:param event the button press event passed by the pressing of the button</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
@@ -223,7 +228,10 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">processed_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">original_image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">choose_color</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__choose_color</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        On button press opens the color picker frame</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># variable to store hexadecimal code of color</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">set_color_code</span><span class="p">(</span><span class="n">colorchooser</span><span class="o">.</span><span class="n">askcolor</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Choose color&quot;</span><span class="p">))</span>
 </pre></div>
@@ -247,7 +255,7 @@
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">Frame</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="o">=</span><span class="n">master</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;New&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Open&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Save&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">save_as_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Save As&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">draw_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Draw&quot;</span><span class="p">)</span>
@@ -255,16 +263,16 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">filter_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Filter&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">adjust_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Adjust&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Clear&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">color_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Select Color&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">choose_color</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Select Color&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__choose_color</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">save_as_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_as_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">draw_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">draw_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">crop_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">crop_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">filter_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">adjust_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjust_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">clear_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__new_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__save_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_as_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__save_as_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">draw_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__draw_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">crop_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__crop_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filter_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__filter_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">adjust_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__adjust_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clear_button_released</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
@@ -276,7 +284,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">adjust_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">new_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__new_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Open the file manager frame and has the user select an image on button press</span>
+<span class="sd">        @:param event the button press event passed by the pressing of the button</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_draw</span><span class="p">()</span>
@@ -293,7 +305,11 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span> <span class="o">=</span> <span class="kc">True</span>
 
-    <span class="k">def</span> <span class="nf">save_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__save_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Saves the image in place on button press</span>
+<span class="sd">        @:param event the button press event passed by the pressing of the button</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_crop_state</span><span class="p">:</span>
@@ -305,7 +321,11 @@
                 <span class="n">image_filename</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">filename</span>
                 <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">image_filename</span><span class="p">,</span> <span class="n">save_image</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">save_as_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__save_as_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Opens the file manager dialog and allows the user to save the image as a new file on button press</span>
+<span class="sd">        @:param event the button press event passed by the pressing of the button</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_as_button</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
@@ -322,7 +342,11 @@
 
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
 
-    <span class="k">def</span> <span class="nf">draw_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__draw_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Toggles the drawing functionality of the program on button press</span>
+<span class="sd">        @:param event the button press event passed by the pressing of the button</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">draw_button</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_crop_state</span><span class="p">:</span>
@@ -332,7 +356,11 @@
                 <span class="k">else</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">activate_draw</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">crop_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__crop_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Toggles the cropping functionality of the program on button press</span>
+<span class="sd">        @:param event the button press event passed by the pressing of the button</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">crop_button</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
@@ -342,7 +370,11 @@
                 <span class="k">else</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">activate_crop</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">filter_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__filter_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Opens the filter frame on button press</span>
+<span class="sd">        @:param event the button press event passed by the pressing of the button</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter_button</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
@@ -353,7 +385,11 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">filter_frame</span> <span class="o">=</span> <span class="n">FilterFrame</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">filter_frame</span><span class="o">.</span><span class="n">grab_set</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">adjust_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__adjust_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Opens the adjust frame on button press</span>
+<span class="sd">        @:param event the button press event passed by the pressing of the button</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjust_button</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
@@ -364,7 +400,11 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">adjust_frame</span> <span class="o">=</span> <span class="n">AdjustFrame</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">adjust_frame</span><span class="o">.</span><span class="n">grab_set</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">clear_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__clear_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Clears the edits to the image on button press</span>
+<span class="sd">        @:param event the button press event passed by the pressing of the button</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
@@ -375,7 +415,10 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">processed_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">original_image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">choose_color</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__choose_color</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        On button press opens the color picker frame</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># variable to store hexadecimal code of color</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">set_color_code</span><span class="p">(</span><span class="n">colorchooser</span><span class="o">.</span><span class="n">askcolor</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Choose color&quot;</span><span class="p">))</span>
 </pre></div>
@@ -398,7 +441,7 @@
             <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">Frame</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="o">=</span><span class="n">master</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;New&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Open&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Save&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">save_as_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Save As&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">draw_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Draw&quot;</span><span class="p">)</span>
@@ -406,16 +449,16 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">filter_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Filter&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">adjust_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Adjust&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Clear&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">color_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Select Color&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">choose_color</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Select Color&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__choose_color</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">save_as_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_as_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">draw_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">draw_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">crop_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">crop_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">filter_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">adjust_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjust_button_released</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">clear_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__new_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__save_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_as_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__save_as_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">draw_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__draw_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">crop_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__crop_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filter_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__filter_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">adjust_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__adjust_button_released</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;ButtonRelease&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clear_button_released</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
@@ -437,253 +480,6 @@ colormap, container, cursor, height, highlightbackground,
 highlightcolor, highlightthickness, relief, takefocus, visual, width.</p>
 </div>
 
-
-                            </div>
-                            <div id="EditBar.new_button_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#EditBar.new_button_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">new_button_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">new_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_button</span><span class="p">:</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_draw</span><span class="p">()</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_crop_state</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_crop</span><span class="p">()</span>
-
-            <span class="n">filename</span> <span class="o">=</span> <span class="n">filedialog</span><span class="o">.</span><span class="n">askopenfilename</span><span class="p">()</span>
-            <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-
-            <span class="k">if</span> <span class="n">image</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">original_image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">processed_image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span> <span class="o">=</span> <span class="kc">True</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="EditBar.save_button_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#EditBar.save_button_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">save_button_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">save_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span><span class="p">:</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_crop_state</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_crop</span><span class="p">()</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_draw</span><span class="p">()</span>
-
-                <span class="n">save_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">processed_image</span>
-                <span class="n">image_filename</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">filename</span>
-                <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">image_filename</span><span class="p">,</span> <span class="n">save_image</span><span class="p">)</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="EditBar.save_as_button_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#EditBar.save_as_button_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">save_as_button_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">save_as_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_as_button</span><span class="p">:</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_draw</span><span class="p">()</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_crop_state</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_crop</span><span class="p">()</span>
-
-                <span class="n">original_file_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">filename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-                <span class="n">filename</span> <span class="o">=</span> <span class="n">filedialog</span><span class="o">.</span><span class="n">asksaveasfilename</span><span class="p">()</span>
-                <span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">original_file_type</span>
-
-                <span class="n">save_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">processed_image</span>
-                <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">save_image</span><span class="p">)</span>
-
-                <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="EditBar.draw_button_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#EditBar.draw_button_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">draw_button_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">draw_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">draw_button</span><span class="p">:</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_crop_state</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_crop</span><span class="p">()</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_draw</span><span class="p">()</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">activate_draw</span><span class="p">()</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="EditBar.crop_button_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#EditBar.crop_button_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">crop_button_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">crop_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">crop_button</span><span class="p">:</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_draw</span><span class="p">()</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_crop_state</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_crop</span><span class="p">()</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">activate_crop</span><span class="p">()</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="EditBar.filter_button_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#EditBar.filter_button_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">filter_button_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">filter_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter_button</span><span class="p">:</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_draw</span><span class="p">()</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_crop_state</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_crop</span><span class="p">()</span>
-
-                <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">filter_frame</span> <span class="o">=</span> <span class="n">FilterFrame</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">filter_frame</span><span class="o">.</span><span class="n">grab_set</span><span class="p">()</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="EditBar.adjust_button_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#EditBar.adjust_button_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">adjust_button_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">adjust_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjust_button</span><span class="p">:</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_draw</span><span class="p">()</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_crop_state</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_crop</span><span class="p">()</span>
-
-                <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">adjust_frame</span> <span class="o">=</span> <span class="n">AdjustFrame</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">adjust_frame</span><span class="o">.</span><span class="n">grab_set</span><span class="p">()</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="EditBar.clear_button_released" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#EditBar.clear_button_released">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">clear_button_released</span><span class="signature">(self, event)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">clear_button_released</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_containing</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span><span class="p">:</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_image_selected</span><span class="p">:</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_draw_state</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_draw</span><span class="p">()</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">is_crop_state</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">deactivate_crop</span><span class="p">()</span>
-
-                <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">processed_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">original_image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">show_image</span><span class="p">()</span>
-</pre></div>
-
-        </details>
-
-    
-
-                            </div>
-                            <div id="EditBar.choose_color" class="classattr">
-                                        <div class="attr function"><a class="headerlink" href="#EditBar.choose_color">#&nbsp;&nbsp</a>
-
-        
-            <span class="def">def</span>
-            <span class="name">choose_color</span><span class="signature">(self)</span>:
-    </div>
-
-                <details>
-            <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">choose_color</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># variable to store hexadecimal code of color</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">image_viewer</span><span class="o">.</span><span class="n">set_color_code</span><span class="p">(</span><span class="n">colorchooser</span><span class="o">.</span><span class="n">askcolor</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Choose color&quot;</span><span class="p">))</span>
-</pre></div>
-
-        </details>
-
-    
 
                             </div>
                             <div class="inherited">
