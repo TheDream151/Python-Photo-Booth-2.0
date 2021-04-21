@@ -48,6 +48,7 @@ class MyVideoCapture:
         """
         Retrieves the current camera feed
         """
+
         ret = False
         if self.vid.isOpened():
             ret, frame = self.vid.read()

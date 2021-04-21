@@ -8,9 +8,8 @@ class FilterFrame(Toplevel):
     def __init__(self, master=None):
         Toplevel.__init__(self, master=master)
 
-        self.original_image = self.master.processed_image
         self.filtered_image = None
-
+        self.original_image = self.master.processed_image
         self.negative_button = Button(master=self, text="Negative")
         self.black_white_button = Button(master=self, text="Black White")
         self.sepia_button = Button(master=self, text="Sepia")
