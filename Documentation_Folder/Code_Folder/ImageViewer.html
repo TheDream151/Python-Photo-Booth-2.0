@@ -153,12 +153,12 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">new_width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">new_height</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="n">new_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">new_height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">shown_image</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">set_color_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">colorCode</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">set_color_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color_code</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the colorCode to the passed value</span>
 <span class="sd">        @:param colorCode the new colorCode value</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">colorCode</span> <span class="o">=</span> <span class="n">colorCode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">colorCode</span> <span class="o">=</span> <span class="n">color_code</span>
 
     <span class="k">def</span> <span class="nf">activate_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -201,7 +201,7 @@
     <span class="k">def</span> <span class="nf">start_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Begins the draw</span>
-<span class="sd">        @:param is the x and y cordinates of the mouse</span>
+<span class="sd">        @:param is the x and y coordinates of the mouse</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span>
@@ -209,7 +209,7 @@
     <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Draws on the image</span>
-<span class="sd">        @:param is the x and y cordinates of the mouse</span>
+<span class="sd">        @:param is the x and y coordinates of the mouse</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">draw_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
                                                      <span class="n">fill</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">colorCode</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">capstyle</span><span class="o">=</span><span class="n">ROUND</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
@@ -225,7 +225,7 @@
     <span class="k">def</span> <span class="nf">start_crop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Begins the crop</span>
-<span class="sd">        @:param is the x and y cordinates of the mouse</span>
+<span class="sd">        @:param is the x and y coordinates of the mouse</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">crop_start_x</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">crop_start_y</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span>
@@ -233,7 +233,7 @@
     <span class="k">def</span> <span class="nf">crop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Crops the image</span>
-<span class="sd">        @:param is the x and y cordinates of the mouse</span>
+<span class="sd">        @:param is the x and y coordinates of the mouse</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rectangle_id</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rectangle_id</span><span class="p">)</span>
@@ -359,12 +359,12 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">new_width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">new_height</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="n">new_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">new_height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">shown_image</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">set_color_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">colorCode</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">set_color_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color_code</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the colorCode to the passed value</span>
 <span class="sd">        @:param colorCode the new colorCode value</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">colorCode</span> <span class="o">=</span> <span class="n">colorCode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">colorCode</span> <span class="o">=</span> <span class="n">color_code</span>
 
     <span class="k">def</span> <span class="nf">activate_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -407,7 +407,7 @@
     <span class="k">def</span> <span class="nf">start_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Begins the draw</span>
-<span class="sd">        @:param is the x and y cordinates of the mouse</span>
+<span class="sd">        @:param is the x and y coordinates of the mouse</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span>
@@ -415,7 +415,7 @@
     <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Draws on the image</span>
-<span class="sd">        @:param is the x and y cordinates of the mouse</span>
+<span class="sd">        @:param is the x and y coordinates of the mouse</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">draw_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
                                                      <span class="n">fill</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">colorCode</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">capstyle</span><span class="o">=</span><span class="n">ROUND</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
@@ -431,7 +431,7 @@
     <span class="k">def</span> <span class="nf">start_crop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Begins the crop</span>
-<span class="sd">        @:param is the x and y cordinates of the mouse</span>
+<span class="sd">        @:param is the x and y coordinates of the mouse</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">crop_start_x</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">crop_start_y</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span>
@@ -439,7 +439,7 @@
     <span class="k">def</span> <span class="nf">crop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Crops the image</span>
-<span class="sd">        @:param is the x and y cordinates of the mouse</span>
+<span class="sd">        @:param is the x and y coordinates of the mouse</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rectangle_id</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rectangle_id</span><span class="p">)</span>
@@ -600,17 +600,17 @@ highlightcolor, highlightthickness, relief, takefocus, visual, width.</p>
 
         
             <span class="def">def</span>
-            <span class="name">set_color_code</span><span class="signature">(self, colorCode)</span>:
+            <span class="name">set_color_code</span><span class="signature">(self, color_code)</span>:
     </div>
 
                 <details>
             <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">set_color_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">colorCode</span><span class="p">):</span>
+            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">set_color_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color_code</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the colorCode to the passed value</span>
 <span class="sd">        @:param colorCode the new colorCode value</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">colorCode</span> <span class="o">=</span> <span class="n">colorCode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">colorCode</span> <span class="o">=</span> <span class="n">color_code</span>
 </pre></div>
 
         </details>
@@ -744,7 +744,7 @@ highlightcolor, highlightthickness, relief, takefocus, visual, width.</p>
             <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">start_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Begins the draw</span>
-<span class="sd">        @:param is the x and y cordinates of the mouse</span>
+<span class="sd">        @:param is the x and y coordinates of the mouse</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span>
@@ -753,7 +753,7 @@ highlightcolor, highlightthickness, relief, takefocus, visual, width.</p>
         </details>
 
             <div class="docstring"><p>Begins the draw
-@:param is the x and y cordinates of the mouse</p>
+@:param is the x and y coordinates of the mouse</p>
 </div>
 
 
@@ -771,7 +771,7 @@ highlightcolor, highlightthickness, relief, takefocus, visual, width.</p>
             <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Draws on the image</span>
-<span class="sd">        @:param is the x and y cordinates of the mouse</span>
+<span class="sd">        @:param is the x and y coordinates of the mouse</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">draw_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
                                                      <span class="n">fill</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">colorCode</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">capstyle</span><span class="o">=</span><span class="n">ROUND</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
@@ -788,7 +788,7 @@ highlightcolor, highlightthickness, relief, takefocus, visual, width.</p>
         </details>
 
             <div class="docstring"><p>Draws on the image
-@:param is the x and y cordinates of the mouse</p>
+@:param is the x and y coordinates of the mouse</p>
 </div>
 
 
@@ -806,7 +806,7 @@ highlightcolor, highlightthickness, relief, takefocus, visual, width.</p>
             <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">start_crop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Begins the crop</span>
-<span class="sd">        @:param is the x and y cordinates of the mouse</span>
+<span class="sd">        @:param is the x and y coordinates of the mouse</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">crop_start_x</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">crop_start_y</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span>
@@ -815,7 +815,7 @@ highlightcolor, highlightthickness, relief, takefocus, visual, width.</p>
         </details>
 
             <div class="docstring"><p>Begins the crop
-@:param is the x and y cordinates of the mouse</p>
+@:param is the x and y coordinates of the mouse</p>
 </div>
 
 
@@ -833,7 +833,7 @@ highlightcolor, highlightthickness, relief, takefocus, visual, width.</p>
             <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">crop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Crops the image</span>
-<span class="sd">        @:param is the x and y cordinates of the mouse</span>
+<span class="sd">        @:param is the x and y coordinates of the mouse</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rectangle_id</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rectangle_id</span><span class="p">)</span>
@@ -848,7 +848,7 @@ highlightcolor, highlightthickness, relief, takefocus, visual, width.</p>
         </details>
 
             <div class="docstring"><p>Crops the image
-@:param is the x and y cordinates of the mouse</p>
+@:param is the x and y coordinates of the mouse</p>
 </div>
 
 
