@@ -91,11 +91,11 @@ class MyVideoCapture:
             face_x2 = face_x1 + face_w
             face_y1 = y
 
-            # witch size in relation to face by scaling
+            # filter size in relation to face by scaling
             filter_width = int(face_w)
             filter_height = int(filter_width * self.original_beard_h / self.original_beard_w)
 
-            # setting location of coordinates of witch
+            # setting location of coordinates of filter
             filter_x1 = face_x2 - int(face_w / 2) - int(filter_width / 2)
             filter_x2 = filter_x1 + filter_width
             filter_y1 = face_y1 + int(face_h / 1.75)
@@ -121,7 +121,7 @@ class MyVideoCapture:
             mask_inv = cv2.resize(self.original_beard_mask_inv, (filter_width, filter_height),
                                   interpolation=cv2.INTER_AREA)
 
-            # take ROI for witch from background that is equal to size of filter image
+            # take ROI for filter from background that is equal to size of filter image
             roi = frame[filter_y1:filter_y2, filter_x1:filter_x2]
             # original image in background (bg) where filter is not
             roi_bg = cv2.bitwise_and(roi, roi, mask=mask)
@@ -131,7 +131,7 @@ class MyVideoCapture:
             # put back in original image
             frame[filter_y1:filter_y2, filter_x1:filter_x2] = dst
 
-            # witch size in relation to face by scaling
+            # filter size in relation to face by scaling
             filter_width = int(1.4 * face_w)
             filter_height = int(filter_width * self.original_hat_h / self.original_hat_w)
 
