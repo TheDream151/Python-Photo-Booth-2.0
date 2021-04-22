@@ -153,12 +153,12 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">new_width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">new_height</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="n">new_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">new_height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">shown_image</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">set_color_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">colorCode</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">set_color_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color_code</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the colorCode to the passed value</span>
 <span class="sd">        @:param colorCode the new colorCode value</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">colorCode</span> <span class="o">=</span> <span class="n">colorCode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">colorCode</span> <span class="o">=</span> <span class="n">color_code</span>
 
     <span class="k">def</span> <span class="nf">activate_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -359,12 +359,12 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">new_width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">new_height</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="n">new_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">new_height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">shown_image</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">set_color_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">colorCode</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">set_color_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color_code</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the colorCode to the passed value</span>
 <span class="sd">        @:param colorCode the new colorCode value</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">colorCode</span> <span class="o">=</span> <span class="n">colorCode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">colorCode</span> <span class="o">=</span> <span class="n">color_code</span>
 
     <span class="k">def</span> <span class="nf">activate_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -600,17 +600,17 @@ highlightcolor, highlightthickness, relief, takefocus, visual, width.</p>
 
         
             <span class="def">def</span>
-            <span class="name">set_color_code</span><span class="signature">(self, colorCode)</span>:
+            <span class="name">set_color_code</span><span class="signature">(self, color_code)</span>:
     </div>
 
                 <details>
             <summary>View Source</summary>
-            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">set_color_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">colorCode</span><span class="p">):</span>
+            <div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">set_color_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color_code</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the colorCode to the passed value</span>
 <span class="sd">        @:param colorCode the new colorCode value</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">colorCode</span> <span class="o">=</span> <span class="n">colorCode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">colorCode</span> <span class="o">=</span> <span class="n">color_code</span>
 </pre></div>
 
         </details>

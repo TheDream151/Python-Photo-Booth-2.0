@@ -58,12 +58,12 @@ class ImageViewer(Frame):
         self.canvas.config(width=new_width, height=new_height)
         self.canvas.create_image(new_width / 2, new_height / 2, anchor=CENTER, image=self.shown_image)
 
-    def set_color_code(self, colorCode):
+    def set_color_code(self, color_code):
         """
         Sets the colorCode to the passed value
         @:param colorCode the new colorCode value
         """
-        self.colorCode = colorCode
+        self.colorCode = color_code
 
     def activate_draw(self):
         """
