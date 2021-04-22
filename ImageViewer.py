@@ -106,7 +106,7 @@ class ImageViewer(Frame):
     def start_draw(self, event):
         """
         Begins the draw
-        @:param is the x and y cordinates of the mouse
+        @:param is the x and y coordinates of the mouse
         """
         self.x = event.x
         self.y = event.y
@@ -114,7 +114,7 @@ class ImageViewer(Frame):
     def draw(self, event):
         """
         Draws on the image
-        @:param is the x and y cordinates of the mouse
+        @:param is the x and y coordinates of the mouse
         """
         self.draw_ids.append(self.canvas.create_line(self.x, self.y, event.x, event.y, width=2,
                                                      fill=self.colorCode[1], capstyle=ROUND, smooth=True))
@@ -130,7 +130,7 @@ class ImageViewer(Frame):
     def start_crop(self, event):
         """
         Begins the crop
-        @:param is the x and y cordinates of the mouse
+        @:param is the x and y coordinates of the mouse
         """
         self.crop_start_x = event.x
         self.crop_start_y = event.y
@@ -138,7 +138,7 @@ class ImageViewer(Frame):
     def crop(self, event):
         """
         Crops the image
-        @:param is the x and y cordinates of the mouse
+        @:param is the x and y coordinates of the mouse
         """
         if self.rectangle_id:
             self.canvas.delete(self.rectangle_id)

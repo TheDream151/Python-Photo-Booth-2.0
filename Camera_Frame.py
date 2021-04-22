@@ -64,7 +64,7 @@ class Camera(tk.Frame):
         """
         # Get a frame from the video source
         ret, frame = self.vid.get_frame()
-        frame = cv2.flip(frame,1)
+        frame = cv2.flip(frame, 1)
         if self.countdown:
             font = cv2.FONT_HERSHEY_SIMPLEX
             cv2.putText(frame, str(self.timer),

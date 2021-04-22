@@ -39,7 +39,7 @@ class FilterFrame(Toplevel):
 
     def __negative_button_released(self, event):
         """
-        Applies the negative filter to the previewable image on button release
+        Applies the negative filter to the reviewable image on button release
         @:param event this parameter takes the button's event, this is not used but is required for the button to call
         the function
         """
@@ -48,7 +48,7 @@ class FilterFrame(Toplevel):
 
     def __black_white_released(self, event):
         """
-        Applies the black and white filter to the previewable image on button release
+        Applies the black and white filter to the reviewable image on button release
         @:param event this parameter takes the button's event, this is not used but is required for the button to call
         the function
         """
@@ -57,7 +57,7 @@ class FilterFrame(Toplevel):
 
     def __sepia_button_released(self, event):
         """
-        Applies the sepia filter to the previewable image on button release
+        Applies the sepia filter to the reviewable image on button release
         @:param event this parameter takes the button's event, this is not used but is required for the button to call
         the function
         """
@@ -66,7 +66,7 @@ class FilterFrame(Toplevel):
 
     def __emboss_button_released(self, event):
         """
-        Applies the emboss filter to the previewable image on button release
+        Applies the emboss filter to the reviewable image on button release
         @:param event this parameter takes the button's event, this is not used but is required for the button to call
         the function
         """
@@ -75,7 +75,7 @@ class FilterFrame(Toplevel):
 
     def __gaussian_blur_button_released(self, event):
         """
-        Applies the gaussian blur filter to the previewable image on button release
+        Applies the gaussian blur filter to the reviewable image on button release
         @:param event this parameter takes the button's event, this is not used but is required for the button to call
         the function
         """
@@ -84,7 +84,7 @@ class FilterFrame(Toplevel):
 
     def __median_blur_button_released(self, event):
         """
-        Applies the median blur filter to the previewable image on button release
+        Applies the median blur filter to the reviewable image on button release
         @:param event this parameter takes the button's event, this is not used but is required for the button to call
         the function
         """
