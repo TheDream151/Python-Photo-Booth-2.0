@@ -153,11 +153,11 @@
             <span class="n">face_x2</span> <span class="o">=</span> <span class="n">face_x1</span> <span class="o">+</span> <span class="n">face_w</span>
             <span class="n">face_y1</span> <span class="o">=</span> <span class="n">y</span>
 
-            <span class="c1"># filter size in relation to face by scaling</span>
+            <span class="c1"># witch size in relation to face by scaling</span>
             <span class="n">filter_width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">face_w</span><span class="p">)</span>
             <span class="n">filter_height</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">filter_width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">original_beard_h</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">original_beard_w</span><span class="p">)</span>
 
-            <span class="c1"># setting location of coordinates of filter</span>
+            <span class="c1"># setting location of coordinates of witch</span>
             <span class="n">filter_x1</span> <span class="o">=</span> <span class="n">face_x2</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">face_w</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">filter_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
             <span class="n">filter_x2</span> <span class="o">=</span> <span class="n">filter_x1</span> <span class="o">+</span> <span class="n">filter_width</span>
             <span class="n">filter_y1</span> <span class="o">=</span> <span class="n">face_y1</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">face_h</span> <span class="o">/</span> <span class="mf">1.75</span><span class="p">)</span>
@@ -183,7 +183,7 @@
             <span class="n">mask_inv</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_beard_mask_inv</span><span class="p">,</span> <span class="p">(</span><span class="n">filter_width</span><span class="p">,</span> <span class="n">filter_height</span><span class="p">),</span>
                                   <span class="n">interpolation</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_AREA</span><span class="p">)</span>
 
-            <span class="c1"># take ROI for filter from background that is equal to size of filter image</span>
+            <span class="c1"># take ROI for witch from background that is equal to size of filter image</span>
             <span class="n">roi</span> <span class="o">=</span> <span class="n">frame</span><span class="p">[</span><span class="n">filter_y1</span><span class="p">:</span><span class="n">filter_y2</span><span class="p">,</span> <span class="n">filter_x1</span><span class="p">:</span><span class="n">filter_x2</span><span class="p">]</span>
             <span class="c1"># original image in background (bg) where filter is not</span>
             <span class="n">roi_bg</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_and</span><span class="p">(</span><span class="n">roi</span><span class="p">,</span> <span class="n">roi</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
@@ -193,7 +193,7 @@
             <span class="c1"># put back in original image</span>
             <span class="n">frame</span><span class="p">[</span><span class="n">filter_y1</span><span class="p">:</span><span class="n">filter_y2</span><span class="p">,</span> <span class="n">filter_x1</span><span class="p">:</span><span class="n">filter_x2</span><span class="p">]</span> <span class="o">=</span> <span class="n">dst</span>
 
-            <span class="c1"># filter size in relation to face by scaling</span>
+            <span class="c1"># witch size in relation to face by scaling</span>
             <span class="n">filter_width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1.4</span> <span class="o">*</span> <span class="n">face_w</span><span class="p">)</span>
             <span class="n">filter_height</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">filter_width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">original_hat_h</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">original_hat_w</span><span class="p">)</span>
 
@@ -339,11 +339,11 @@
             <span class="n">face_x2</span> <span class="o">=</span> <span class="n">face_x1</span> <span class="o">+</span> <span class="n">face_w</span>
             <span class="n">face_y1</span> <span class="o">=</span> <span class="n">y</span>
 
-            <span class="c1"># filter size in relation to face by scaling</span>
+            <span class="c1"># witch size in relation to face by scaling</span>
             <span class="n">filter_width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">face_w</span><span class="p">)</span>
             <span class="n">filter_height</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">filter_width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">original_beard_h</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">original_beard_w</span><span class="p">)</span>
 
-            <span class="c1"># setting location of coordinates of filter</span>
+            <span class="c1"># setting location of coordinates of witch</span>
             <span class="n">filter_x1</span> <span class="o">=</span> <span class="n">face_x2</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">face_w</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">filter_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
             <span class="n">filter_x2</span> <span class="o">=</span> <span class="n">filter_x1</span> <span class="o">+</span> <span class="n">filter_width</span>
             <span class="n">filter_y1</span> <span class="o">=</span> <span class="n">face_y1</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">face_h</span> <span class="o">/</span> <span class="mf">1.75</span><span class="p">)</span>
@@ -369,7 +369,7 @@
             <span class="n">mask_inv</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_beard_mask_inv</span><span class="p">,</span> <span class="p">(</span><span class="n">filter_width</span><span class="p">,</span> <span class="n">filter_height</span><span class="p">),</span>
                                   <span class="n">interpolation</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_AREA</span><span class="p">)</span>
 
-            <span class="c1"># take ROI for filter from background that is equal to size of filter image</span>
+            <span class="c1"># take ROI for witch from background that is equal to size of filter image</span>
             <span class="n">roi</span> <span class="o">=</span> <span class="n">frame</span><span class="p">[</span><span class="n">filter_y1</span><span class="p">:</span><span class="n">filter_y2</span><span class="p">,</span> <span class="n">filter_x1</span><span class="p">:</span><span class="n">filter_x2</span><span class="p">]</span>
             <span class="c1"># original image in background (bg) where filter is not</span>
             <span class="n">roi_bg</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_and</span><span class="p">(</span><span class="n">roi</span><span class="p">,</span> <span class="n">roi</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
@@ -379,7 +379,7 @@
             <span class="c1"># put back in original image</span>
             <span class="n">frame</span><span class="p">[</span><span class="n">filter_y1</span><span class="p">:</span><span class="n">filter_y2</span><span class="p">,</span> <span class="n">filter_x1</span><span class="p">:</span><span class="n">filter_x2</span><span class="p">]</span> <span class="o">=</span> <span class="n">dst</span>
 
-            <span class="c1"># filter size in relation to face by scaling</span>
+            <span class="c1"># witch size in relation to face by scaling</span>
             <span class="n">filter_width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1.4</span> <span class="o">*</span> <span class="n">face_w</span><span class="p">)</span>
             <span class="n">filter_height</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">filter_width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">original_hat_h</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">original_hat_w</span><span class="p">)</span>
 
